@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,7 +22,7 @@ body{
     color:white;
 }
 
-/* NAVBAR */
+/* HEADER */
 
 header{
     background:#111;
@@ -33,14 +34,15 @@ header{
 }
 
 .logo{
-    font-size:26px;
-    font-weight:bold;
     color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
 }
 
 nav{
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
 }
 
 nav a{
@@ -53,39 +55,42 @@ nav a:hover{
     color:#ff6a00;
 }
 
+
 /* PRODUCT */
 
-.product-container{
-    max-width:1150px;
+.product-section{
+    max-width:1100px;
     margin:60px auto;
     padding:0 25px;
 
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:50px;
     align-items:center;
 }
 
-/* PRODUCT IMAGE */
+
+/* IMAGE */
 
 .product-image img{
     width:100%;
-    height:550px;
+    height:500px;
     object-fit:cover;
-    display:block;
-    border-radius:15px;
+    border-radius:14px;
 }
 
-/* PRODUCT INFO */
 
-.product-info h1{
-    font-size:42px;
-    line-height:1.2;
+/* DETAILS */
+
+.product-details h1{
+    font-size:40px;
     margin-bottom:15px;
 }
 
-.product-info h1 span{
-    color:#ff6a00;
+.product-details p{
+    color:#aaa;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
 .price{
@@ -95,160 +100,141 @@ nav a:hover{
     margin-bottom:25px;
 }
 
-.description{
-    color:#bbbbbb;
-    font-size:16px;
-    line-height:1.7;
-    margin-bottom:25px;
-}
 
 /* FEATURES */
 
 .features{
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-.features h3{
+.features h2{
     font-size:20px;
     margin-bottom:12px;
 }
 
 .features ul{
-    list-style:none;
+    padding-left:20px;
 }
 
 .features li{
-    color:#cccccc;
-    margin-bottom:9px;
+    color:#ccc;
+    margin-bottom:8px;
 }
 
-.features li::before{
-    content:"✓";
-    color:#ff6a00;
-    font-weight:bold;
-    margin-right:10px;
-}
 
 /* QUANTITY */
 
-.quantity{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.quantity label{
-    font-weight:bold;
-}
-
-.quantity input{
-    width:70px;
-    padding:10px;
-    background:#1b1b1b;
-    color:white;
-    border:1px solid #444;
-    border-radius:6px;
-    text-align:center;
-}
-
-/* BUTTONS */
-
-.buttons{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-button{
-    padding:15px;
-    border:none;
-    border-radius:7px;
-    font-size:17px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.add-cart-btn{
-    background:#222;
-    color:white;
-    border:1px solid #ff6a00;
-}
-
-.buy-btn{
-    background:#ff6a00;
-    color:white;
-}
-
-button:hover{
-    opacity:0.85;
-}
-
-.message{
-    margin-top:20px;
-    color:#ff6a00;
-    font-weight:bold;
-}
-
-/* BACK TO PRODUCTS */
-
-.back-btn{
-    display:inline-block;
-    margin-top:20px;
-    color:#ff6a00;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.back-btn:hover{
-    text-decoration:underline;
-}
-
-/* EXTRA CONTENT */
-
-.product-details{
-    max-width:1150px;
-    margin:0 auto 70px;
-    padding:40px 25px;
-
-    border-top:1px solid #292929;
-}
-
-.product-details h2{
-    font-size:28px;
-    margin-bottom:15px;
-}
-
-.product-details h2 span{
-    color:#ff6a00;
-}
-
-.product-details p{
-    color:#999999;
-    line-height:1.7;
-}
-
-/* FOOTER */
-
-footer{
-    background:#111;
-    border-top:1px solid #292929;
-    padding:35px;
-    text-align:center;
-}
-
-.footer-logo{
-    color:#ff6a00;
-    font-size:22px;
+.quantity-title{
     font-weight:bold;
     margin-bottom:10px;
 }
 
-footer p{
-    color:#888;
-    font-size:13px;
-    margin:6px;
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
 }
+
+.quantity-controls button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.quantity-controls button:hover{
+    background:#ff6a00;
+}
+
+.quantity-number{
+    width:40px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.cart-btn,
+.buy-btn{
+    border:none;
+    padding:14px 22px;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cart-btn{
+    background:#ff6a00;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#e85f00;
+}
+
+.buy-btn{
+    background:white;
+    color:#111;
+}
+
+.buy-btn:hover{
+    background:#ddd;
+}
+
+
+/* INFO */
+
+.info-section{
+    background:#111;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.info-section h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.info-section h2 span{
+    color:#ff6a00;
+}
+
+.info-section p{
+    max-width:750px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.8;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#0b0b0b;
+    border-top:1px solid #292929;
+    text-align:center;
+    padding:25px;
+    color:#888;
+}
+
+footer strong{
+    color:#ff6a00;
+}
+
 
 /* MOBILE */
 
@@ -260,42 +246,39 @@ footer p{
     }
 
     nav{
-        flex-wrap:wrap;
         justify-content:center;
         gap:15px;
     }
 
-    .product-container{
+    .product-section{
         grid-template-columns:1fr;
-        margin:35px auto;
-        gap:35px;
+        margin-top:35px;
     }
 
     .product-image img{
-        height:430px;
+        height:350px;
     }
 
-    .product-info h1{
-        font-size:34px;
+    .product-details h1{
+        font-size:32px;
     }
 
-    .buttons{
-        grid-template-columns:1fr 1fr;
-    }
 }
 
 </style>
+
 </head>
 
 
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- HEADER -->
 
 <header>
 
     <div class="logo">
-        RIDEVOLT
+        RideVolt
     </div>
 
     <nav>
@@ -321,7 +304,10 @@ footer p{
 
 <!-- PRODUCT -->
 
-<section class="product-container">
+<section class="product-section">
+
+
+    <!-- IMAGE -->
 
     <div class="product-image">
 
@@ -332,66 +318,95 @@ footer p{
     </div>
 
 
-    <div class="product-info">
+    <!-- DETAILS -->
+
+    <div class="product-details">
 
         <h1>
-            GripMax Riding <span>Gloves</span>
+            GripMax Riding Gloves
         </h1>
+
+        <p>
+            Ride with better grip and control using the
+            GripMax Riding Gloves. Designed for comfortable
+            everyday riding and confident handling.
+        </p>
+
 
         <div class="price">
             ₹899
         </div>
 
-        <p class="description">
-            Take control of every ride with GripMax Riding Gloves.
-            Designed to provide a secure grip, comfort and protection
-            while keeping your hands ready for every road.
-        </p>
 
+        <!-- FEATURES -->
 
         <div class="features">
 
-            <h3>Key Features</h3>
+            <h2>
+                Key Features
+            </h2>
 
             <ul>
 
-                <li>Enhanced grip for better handlebar control</li>
+                <li>
+                    Comfortable riding fit
+                </li>
 
-                <li>Durable riding construction</li>
+                <li>
+                    Improved grip and control
+                </li>
 
-                <li>Comfortable fit for long rides</li>
+                <li>
+                    Lightweight construction
+                </li>
 
-                <li>Protective palm design</li>
+                <li>
+                    Breathable design
+                </li>
 
-                <li>Breathable material for improved comfort</li>
-
-                <li>Suitable for everyday and touring rides</li>
+                <li>
+                    Suitable for everyday riding
+                </li>
 
             </ul>
 
         </div>
 
 
-        <div class="quantity">
+        <!-- QUANTITY -->
 
-            <label for="quantity">
-                Quantity:
-            </label>
+        <div class="quantity-title">
+            Quantity
+        </div>
 
-            <input
-                type="number"
-                id="quantity"
-                value="1"
-                min="1">
+        <div class="quantity-controls">
+
+            <button
+            onclick="decreaseQuantity()">
+                −
+            </button>
+
+            <span
+            id="quantity"
+            class="quantity-number">
+                1
+            </span>
+
+            <button
+            onclick="increaseQuantity()">
+                +
+            </button>
 
         </div>
 
 
+        <!-- BUTTONS -->
+
         <div class="buttons">
 
             <button
-                class="add-cart-btn"
-                onclick="addToCart()">
+            class="cart-btn"
+            onclick="addToCart()">
 
                 Add to Cart
 
@@ -399,8 +414,8 @@ footer p{
 
 
             <button
-                class="buy-btn"
-                onclick="buyNow()">
+            class="buy-btn"
+            onclick="buyNow()">
 
                 Buy Now
 
@@ -408,39 +423,23 @@ footer p{
 
         </div>
 
-
-        <div
-            id="message"
-            class="message">
-        </div>
-
-
-        <a
-            href="products.html"
-            class="back-btn">
-
-            ← Back to Products
-
-        </a>
-
     </div>
 
 </section>
 
 
-<!-- EXTRA CONTENT -->
+<!-- INFO -->
 
-<section class="product-details">
+<section class="info-section">
 
     <h2>
-        Grip. Control. <span>Ride.</span>
+        Grip. <span>Control. Ride.</span>
     </h2>
 
     <p>
-        GripMax Riding Gloves are made for riders who want better
-        control and dependable hand protection. From daily
-        commuting to weekend adventures, RideVolt keeps your hands
-        comfortable and ready for the road.
+        The GripMax Riding Gloves are designed to give riders
+        comfortable hand protection and better control on
+        everyday journeys. Ride confidently with RideVolt.
     </p>
 
 </section>
@@ -450,16 +449,9 @@ footer p{
 
 <footer>
 
-    <div class="footer-logo">
-        RIDEVOLT
-    </div>
-
     <p>
+        © 2026 <strong>RideVolt</strong>.
         Gear Up. Ride Further.
-    </p>
-
-    <p>
-        © 2026 RideVolt. All Rights Reserved.
     </p>
 
 </footer>
@@ -467,52 +459,124 @@ footer p{
 
 <script>
 
-function getProduct(){
+/* PRODUCT */
 
-    let quantity =
-        parseInt(document.getElementById("quantity").value);
+const product = {
 
-    if(quantity < 1 || isNaN(quantity)){
-        quantity = 1;
-    }
+    name: "GripMax Riding Gloves",
 
-    return {
+    price: 899,
 
-        name: "GripMax Riding Gloves",
+    image:
+    "https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
 
-        price: 899,
+};
 
-        quantity: quantity,
 
-        image: "https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
+/* QUANTITY */
 
-    };
+let quantity = 1;
+
+
+/* PLUS */
+
+function increaseQuantity(){
+
+    quantity++;
+
+    document.getElementById("quantity")
+    .textContent = quantity;
+
 }
 
+
+/* MINUS */
+
+function decreaseQuantity(){
+
+    if(quantity > 1){
+
+        quantity--;
+
+    }
+
+    document.getElementById("quantity")
+    .textContent = quantity;
+
+}
+
+
+/* ADD TO CART */
 
 function addToCart(){
 
-    let product = getProduct();
+    let cart =
+        JSON.parse(localStorage.getItem("ridevoltCart")) || [];
+
+
+    const existingProduct =
+        cart.find(item => item.name === product.name);
+
+
+    if(existingProduct){
+
+        existingProduct.quantity =
+            Number(existingProduct.quantity || 1)
+            + quantity;
+
+    }else{
+
+        cart.push({
+
+            name: product.name,
+
+            price: product.price,
+
+            quantity: quantity,
+
+            image: product.image
+
+        });
+
+    }
+
 
     localStorage.setItem(
-        "ridevoltProduct",
-        JSON.stringify(product)
+        "ridevoltCart",
+        JSON.stringify(cart)
     );
 
-    document.getElementById("message").innerText =
-        "GripMax Riding Gloves added to cart!";
+
+    alert(
+        product.name +
+        " added to cart!"
+    );
 
 }
 
 
+/* BUY NOW */
+
 function buyNow(){
 
-    let product = getProduct();
+    const buyProduct = {
+
+        name: product.name,
+
+        price: product.price,
+
+        quantity: quantity,
+
+        image: product.image
+
+    };
+
 
     localStorage.setItem(
-        "ridevoltProduct",
-        JSON.stringify(product)
+        "ridevoltBuyNow",
+        JSON.stringify(buyProduct)
     );
+
 
     window.location.href =
         "checkout.html";
@@ -521,5 +585,7 @@ function buyNow(){
 
 </script>
 
+
 </body>
+
 </html>

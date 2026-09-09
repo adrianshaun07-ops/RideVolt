@@ -20,21 +20,287 @@
 
     header {
       background: #000;
-      padding: 20px 8%;
+      padding: 20px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: bold;
       color: #ff6a00;
     }
 
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
     nav a {
       color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    .product-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 500px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .product-details h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff6a00;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .description {
+      color: #ccc;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      color: #ddd;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+
+    .quantity {
+      width: 80px;
+      padding: 12px;
+      background: #333;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .cart-button {
+      background: #ff6a00;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cart-button:hover {
+      background: #e65f00;
+    }
+
+    #cartMessage {
+      margin-top: 20px;
+      color: #ff6a00;
+      font-weight: bold;
+    }
+
+    #cartMessage a {
+      color: white;
+      margin-left: 8px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #ff6a00;
+      padding: 11px 18px;
+      border-radius: 6px;
+    }
+
+    .back-button:hover {
+      background: #ff6a00;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+      }
+
+      .logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .product-details h1 {
+        font-size: 32px;
+      }
+
+      .product-image {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">RideVolt</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+
+</header>
+
+
+<section class="product-section">
+
+  <img
+    class="product-image"
+    src="https://images.unsplash.com/photo-1558980664-10ea43c5b3f5?auto=format&fit=crop&w=1000&q=85"
+    alt="RideShield Motorcycle Jacket"
+  >
+
+  <div class="product-details">
+
+    <h1>RideShield Jacket</h1>
+
+    <div class="price">₹3,999</div>
+
+    <p class="description">
+      The RideShield Jacket is designed for riders who want
+      comfort, confidence and protection during everyday
+      rides and long-distance journeys.
+    </p>
+
+    <div class="features">
+      ✓ Durable riding material<br>
+      ✓ Comfortable fit<br>
+      ✓ Protective riding design<br>
+      ✓ Suitable for everyday riding<br>
+      ✓ Ideal for long-distance journeys
+    </div>
+
+    <div>
+
+      <input
+        type="number"
+        id="quantity"
+        class="quantity"
+        value="1"
+        min="1"
+      >
+
+      <button
+        class="cart-button"
+        onclick="addToCart()"
+      >
+        Add to Cart
+      </button>
+
+    </div>
+
+    <div id="cartMessage"></div>
+
+    <a
+      href="products.html"
+      class="back-button"
+    >
+      ← Back to Products
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+  © 2026 RideVolt. All Rights Reserved.
+</footer>
+
+
+<script>
+
+  function addToCart() {
+
+    let quantity = parseInt(
+      document.getElementById("quantity").value
+    );
+
+    if (quantity < 1 || isNaN(quantity)) {
+      quantity = 1;
+    }
+
+    let product = {
+      name: "RideShield Jacket",
+      price: 3999,
+      quantity: quantity
+    };
+
+    localStorage.setItem(
+      "ridevoltProduct",
+      JSON.stringify(product)
+    );
+
+    document.getElementById("cartMessage").innerHTML =
+      "✓ Added to cart! " +
+      "<a href='cart.html'>Go to Cart →</a>";
+
+  }
+
+</script>
+
+</body>
+</html>      color: white;
       text-decoration: none;
       margin-left: 18px;
       font-size: 14px;

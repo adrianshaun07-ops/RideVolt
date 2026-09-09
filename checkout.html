@@ -3,217 +3,330 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RideVolt Checkout</title>
 
-    <title>RideVolt | Checkout</title>
+<style>
 
-    <style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+body{
+    background:#f5f5f5;
+    color:#222;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #111;
-        }
+/* HEADER */
 
-        header {
-            background: #111;
-            color: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header{
+    background:#111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+.logo{
+    color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
+}
 
-        .logo span {
-            color: #ff6a00;
-        }
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
 
-        nav a:hover {
-            color: #ff6a00;
-        }
+nav a:hover{
+    color:#ff6a00;
+}
 
-        .checkout {
-            padding: 60px 7%;
-        }
 
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+/* HERO */
 
-        .title h1 {
-            font-size: 40px;
-        }
+.hero{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
 
-        .title span {
-            color: #ff6a00;
-        }
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
 
-        .checkout-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 30px;
-        }
+.hero h1 span{
+    color:#ff6a00;
+}
 
-        .box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+.hero p{
+    color:#bbb;
+}
 
-        .box h2 {
-            margin-bottom: 25px;
-        }
 
-        .form-group {
-            margin-bottom: 18px;
-        }
+/* CHECKOUT */
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 7px;
-        }
+.checkout-section{
+    max-width:1050px;
+    margin:40px auto;
+    padding:0 20px;
+}
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 15px;
-        }
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
 
-        .form-group textarea {
-            height: 90px;
-            resize: vertical;
-        }
 
-        .btn {
-            width: 100%;
-            background: #ff6a00;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 6px;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+/* BOX */
 
-        .btn:hover {
-            background: #111;
-        }
+.box{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.10);
+}
 
-        .order-item {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
+.box h2{
+    margin-bottom:20px;
+}
 
-        .order-item h3 {
-            margin-bottom: 8px;
-        }
+.box h2 span{
+    color:#ff6a00;
+}
 
-        .order-item p {
-            color: #666;
-        }
 
-        .order-price {
-            color: #ff6a00;
-            font-weight: bold;
-            font-size: 20px;
-            margin-top: 10px;
-        }
+/* FORM */
 
-        .total {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: right;
-            margin-top: 20px;
-        }
+.form-group{
+    margin-bottom:16px;
+}
 
-        .success {
-            display: none;
-            max-width: 700px;
-            margin: 50px auto;
-            background: white;
-            padding: 45px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+}
 
-        .success h1 {
-            color: #ff6a00;
-            margin-bottom: 15px;
-        }
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+}
 
-        .success p {
-            color: #555;
-            margin-bottom: 20px;
-        }
+.form-group textarea{
+    height:90px;
+    resize:vertical;
+}
 
-        .home-btn {
-            display: inline-block;
-            background: #ff6a00;
-            color: white;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
 
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-        }
+/* PAYMENT */
 
-        footer span {
-            color: #ff6a00;
-        }
+.payment-option{
+    margin-bottom:12px;
+}
 
-        @media (max-width: 800px) {
+.payment-option label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+}
 
-            nav {
-                display: none;
-            }
+.payment-option input{
+    accent-color:#ff6a00;
+}
 
-            .checkout-container {
-                grid-template-columns: 1fr;
-            }
 
-        }
+/* ORDER ITEMS */
 
-    </style>
+.order-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.order-item img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.order-info{
+    flex:1;
+}
+
+.order-info h3{
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.order-info p{
+    color:#777;
+    font-size:14px;
+}
+
+.order-price{
+    font-weight:bold;
+    color:#ff6a00;
+}
+
+
+/* TOTAL */
+
+.total-box{
+    margin-top:20px;
+    padding-top:15px;
+    border-top:2px solid #ddd;
+}
+
+.total-row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.grand-total{
+    font-size:22px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.grand-total span{
+    color:#ff6a00;
+}
+
+
+/* BUTTON */
+
+.place-order{
+    width:100%;
+    border:none;
+    background:#ff6a00;
+    color:white;
+    padding:15px;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.place-order:hover{
+    background:#e85f00;
+}
+
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.empty p{
+    color:#777;
+    margin:15px 0 25px;
+}
+
+.shop-btn{
+    display:inline-block;
+    background:#ff6a00;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+
+/* SUCCESS */
+
+.success{
+    display:none;
+    text-align:center;
+    padding:45px 20px;
+}
+
+.success h2{
+    color:#ff6a00;
+    margin-bottom:15px;
+}
+
+.success p{
+    color:#666;
+    line-height:1.7;
+}
+
+.home-btn{
+    display:inline-block;
+    margin-top:25px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:6px;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#999;
+    text-align:center;
+    padding:25px;
+    margin-top:70px;
+}
+
+footer strong{
+    color:#ff6a00;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:15px;
+    }
+
+    .checkout-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -221,10 +334,12 @@
 <body>
 
 
+<!-- HEADER -->
+
 <header>
 
     <div class="logo">
-        Ride<span>Volt</span>
+        RideVolt
     </div>
 
     <nav>
@@ -248,413 +363,522 @@
 </header>
 
 
+<!-- HERO -->
 
-<section class="checkout" id="checkoutSection">
-
-    <div class="title">
-
-        <h1>
-            Secure <span>Checkout</span>
-        </h1>
-
-        <p>
-            Enter your details to complete your RideVolt order.
-        </p>
-
-    </div>
-
-
-
-    <div class="checkout-container">
-
-
-        <!-- CUSTOMER INFORMATION -->
-
-        <div class="box">
-
-            <h2>
-                Customer Information
-            </h2>
-
-
-            <form onsubmit="placeOrder(event)">
-
-
-                <div class="form-group">
-
-                    <label for="name">
-                        Full Name *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your full name"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="phone">
-                        Phone Number *
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        placeholder="Enter your phone number"
-                        pattern="[0-9]{10}"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">
-                        Email Address *
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="address">
-                        Delivery Address *
-                    </label>
-
-                    <textarea
-                        id="address"
-                        placeholder="House number, street, area"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="city">
-                        City *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="city"
-                        placeholder="Enter your city"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="state">
-                        State *
-                    </label>
-
-                    <select id="state" required>
-
-                        <option value="">
-                            Select State
-                        </option>
-
-                        <option>Karnataka</option>
-                        <option>Maharashtra</option>
-                        <option>Goa</option>
-                        <option>Kerala</option>
-                        <option>Tamil Nadu</option>
-                        <option>Telangana</option>
-                        <option>Andhra Pradesh</option>
-                        <option>Delhi</option>
-                        <option>Gujarat</option>
-                        <option>Rajasthan</option>
-                        <option>West Bengal</option>
-                        <option>Uttar Pradesh</option>
-                        <option>Other</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="pincode">
-                        PIN Code *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="pincode"
-                        placeholder="6-digit PIN code"
-                        pattern="[0-9]{6}"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="payment">
-                        Payment Method *
-                    </label>
-
-                    <select id="payment" required>
-
-                        <option value="">
-                            Select Payment Method
-                        </option>
-
-                        <option>
-                            Cash on Delivery
-                        </option>
-
-                        <option>
-                            UPI
-                        </option>
-
-                        <option>
-                            Credit / Debit Card
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="btn"
-                >
-                    Place Order
-                </button>
-
-
-            </form>
-
-        </div>
-
-
-
-        <!-- ORDER SUMMARY -->
-
-        <div class="box">
-
-            <h2>
-                Order Summary
-            </h2>
-
-            <div id="orderSummary">
-
-                <p>
-                    Loading your order...
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ORDER SUCCESS -->
-
-<section class="success" id="successSection">
+<section class="hero">
 
     <h1>
-        🎉 Order Placed!
+        <span>Checkout</span>
     </h1>
 
     <p>
-        Thank you for choosing RideVolt.
+        Complete your RideVolt order.
     </p>
-
-    <p>
-        Your order has been successfully received.
-    </p>
-
-    <p>
-        We will contact you using the information
-        provided during checkout.
-    </p>
-
-    <br>
-
-    <a
-        href="index.html"
-        class="home-btn"
-    >
-        Back to Home
-    </a>
 
 </section>
 
 
+<!-- CHECKOUT -->
+
+<section class="checkout-section">
+
+    <div id="checkoutContent">
+
+        <div class="checkout-grid">
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="box">
+
+                <h2>
+                    Delivery <span>Details</span>
+                </h2>
+
+
+                <form id="checkoutForm">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Full Name
+                        </label>
+
+                        <input
+                        type="text"
+                        id="name"
+                        required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                        type="tel"
+                        id="phone"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                        type="email"
+                        id="email"
+                        required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Delivery Address
+                        </label>
+
+                        <textarea
+                        id="address"
+                        required></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            City
+                        </label>
+
+                        <input
+                        type="text"
+                        id="city"
+                        required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            State
+                        </label>
+
+                        <input
+                        type="text"
+                        id="state"
+                        required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            PIN Code
+                        </label>
+
+                        <input
+                        type="text"
+                        id="pin"
+                        pattern="[0-9]{6}"
+                        maxlength="6"
+                        required>
+
+                    </div>
+
+
+                    <h2 style="margin-top:25px;">
+                        Payment <span>Method</span>
+                    </h2>
+
+
+                    <div class="payment-option">
+
+                        <label>
+
+                            <input
+                            type="radio"
+                            name="payment"
+                            value="Cash on Delivery"
+                            checked>
+
+                            Cash on Delivery
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="payment-option">
+
+                        <label>
+
+                            <input
+                            type="radio"
+                            name="payment"
+                            value="UPI">
+
+                            UPI
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="payment-option">
+
+                        <label>
+
+                            <input
+                            type="radio"
+                            name="payment"
+                            value="Card">
+
+                            Card
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                    type="submit"
+                    class="place-order">
+
+                        Place Order
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="box">
+
+                <h2>
+                    Order <span>Summary</span>
+                </h2>
+
+
+                <div id="orderItems">
+
+                </div>
+
+
+                <div class="total-box">
+
+                    <div class="total-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="subtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="total-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong>
+                            FREE
+                        </strong>
+
+                    </div>
+
+
+                    <div class="total-row grand-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <span id="grandTotal">
+                            ₹0
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- EMPTY CART -->
+
+    <div
+    class="box empty"
+    id="emptyCart"
+    style="display:none;">
+
+        <h2>
+            Your Cart is Empty
+        </h2>
+
+        <p>
+            Add products to your cart before checking out.
+        </p>
+
+        <a
+        href="products.html"
+        class="shop-btn">
+
+            Continue Shopping
+
+        </a>
+
+    </div>
+
+
+    <!-- SUCCESS -->
+
+    <div
+    class="box success"
+    id="successMessage">
+
+        <h2>
+            🎉 Order Placed Successfully!
+        </h2>
+
+        <p>
+            Thank you for shopping with RideVolt.
+        </p>
+
+        <p>
+            Your order has been received.
+        </p>
+
+        <a
+        href="index.html"
+        class="home-btn">
+
+            Back to Home
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
     <p>
-        © 2026 <span>RideVolt</span>.
+        © 2026 <strong>RideVolt</strong>.
         Gear Up. Ride Further.
     </p>
 
 </footer>
 
 
-
 <script>
 
 
-function loadOrder() {
+/* GET CART */
 
-    let savedProduct =
-        localStorage.getItem("ridevoltProduct");
+function getCart(){
+
+    let cart =
+        JSON.parse(localStorage.getItem("ridevoltCart"));
+
+    if(!Array.isArray(cart)){
+
+        cart = [];
+
+    }
+
+    return cart;
+
+}
 
 
-    let summary =
-        document.getElementById("orderSummary");
+/* DISPLAY ORDER */
+
+function displayOrder(){
+
+    const cart =
+        getCart();
+
+    const orderItems =
+        document.getElementById("orderItems");
+
+    const checkoutContent =
+        document.getElementById("checkoutContent");
+
+    const emptyCart =
+        document.getElementById("emptyCart");
 
 
-    if (!savedProduct) {
+    if(cart.length === 0){
 
-        summary.innerHTML = `
+        checkoutContent.style.display =
+            "none";
 
-            <p>
-                Your cart is empty.
-            </p>
-
-            <br>
-
-            <a href="products.html">
-                Browse Products
-            </a>
-
-        `;
+        emptyCart.style.display =
+            "block";
 
         return;
 
     }
 
 
-    let product =
-        JSON.parse(savedProduct);
+    let total = 0;
+
+    let html = "";
 
 
-    let quantity =
-        Number(product.quantity);
+    cart.forEach(function(product){
+
+        const quantity =
+            Number(product.quantity) || 1;
+
+        const price =
+            Number(product.price) || 0;
+
+        const itemTotal =
+            price * quantity;
+
+        total += itemTotal;
 
 
-    let total =
-        product.price * quantity;
+        html += `
+
+            <div class="order-item">
+
+                <img
+                src="${product.image}"
+                alt="${product.name}">
 
 
-    summary.innerHTML = `
+                <div class="order-info">
 
-        <div class="order-item">
+                    <h3>
+                        ${product.name}
+                    </h3>
 
-            <h3>
-                ${product.name}
-            </h3>
+                    <p>
+                        Quantity: ${quantity}
+                    </p>
 
-            <p>
-                Quantity: ${quantity}
-            </p>
+                </div>
 
-            <div class="order-price">
-                ₹${total.toLocaleString("en-IN")}
+
+                <div class="order-price">
+
+                    ₹${itemTotal.toLocaleString("en-IN")}
+
+                </div>
+
             </div>
 
-        </div>
+        `;
 
-        <div class="total">
+    });
 
-            Total:
-            ₹${total.toLocaleString("en-IN")}
 
-        </div>
+    orderItems.innerHTML =
+        html;
 
-    `;
+
+    document.getElementById("subtotal")
+        .textContent =
+        "₹" + total.toLocaleString("en-IN");
+
+
+    document.getElementById("grandTotal")
+        .textContent =
+        "₹" + total.toLocaleString("en-IN");
 
 }
 
 
+/* PLACE ORDER */
 
-function placeOrder(event) {
+document.getElementById("checkoutForm")
+.addEventListener("submit",function(event){
 
     event.preventDefault();
 
 
-    let name =
-        document.getElementById("name").value;
+    const cart =
+        getCart();
 
 
-    let phone =
-        document.getElementById("phone").value;
+    if(cart.length === 0){
+
+        return;
+
+    }
 
 
-    let email =
-        document.getElementById("email").value;
+    const customer = {
 
+        name:
+            document.getElementById("name").value,
 
-    let address =
-        document.getElementById("address").value;
+        phone:
+            document.getElementById("phone").value,
 
+        email:
+            document.getElementById("email").value,
 
-    let city =
-        document.getElementById("city").value;
+        address:
+            document.getElementById("address").value,
 
+        city:
+            document.getElementById("city").value,
 
-    let state =
-        document.getElementById("state").value;
+        state:
+            document.getElementById("state").value,
 
+        pin:
+            document.getElementById("pin").value,
 
-    let pincode =
-        document.getElementById("pincode").value;
+        payment:
+            document.querySelector(
+                'input[name="payment"]:checked'
+            ).value,
 
+        products:
+            cart,
 
-    let payment =
-        document.getElementById("payment").value;
-
-
-    let customer = {
-
-        name: name,
-
-        phone: phone,
-
-        email: email,
-
-        address: address,
-
-        city: city,
-
-        state: state,
-
-        pincode: pincode,
-
-        payment: payment
+        orderDate:
+            new Date().toLocaleString()
 
     };
 
+
+    /* SAVE ORDER */
 
     localStorage.setItem(
         "ridevoltCustomer",
@@ -662,24 +886,32 @@ function placeOrder(event) {
     );
 
 
+    /* EMPTY CART AFTER ORDER */
+
+    localStorage.removeItem(
+        "ridevoltCart"
+    );
+
+
+    /* HIDE CHECKOUT */
+
     document.getElementById(
-        "checkoutSection"
+        "checkoutContent"
     ).style.display = "none";
 
 
+    /* SHOW SUCCESS */
+
     document.getElementById(
-        "successSection"
+        "successMessage"
     ).style.display = "block";
 
-
-    window.scrollTo(0, 0);
-
-}
+});
 
 
+/* LOAD */
 
-loadOrder();
-
+displayOrder();
 
 </script>
 

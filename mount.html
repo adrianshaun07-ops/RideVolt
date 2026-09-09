@@ -1,282 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VoltMount Phone Holder | RideVolt</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
 }
 
-body {
-    background: #0b0b0b;
-    color: white;
+body{
+    background:#0b0b0b;
+    color:white;
 }
 
-header {
-    background: #111;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #292929;
+/* HEADER */
+
+header{
+    background:#111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #292929;
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: #ff6a00;
+.logo{
+    color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
 }
 
-nav {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
 }
 
-nav a:hover {
-    color: #ff6a00;
+nav a:hover{
+    color:#ff6a00;
 }
 
-.product-container {
-    max-width: 1150px;
-    margin: 60px auto;
-    padding: 0 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+
+/* PRODUCT */
+
+.product-section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:0 25px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.product-image img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
-    display: block;
-    border-radius: 15px;
+
+/* IMAGE */
+
+.product-image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:14px;
 }
 
-.product-info h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 15px;
+
+/* DETAILS */
+
+.product-details h1{
+    font-size:40px;
+    margin-bottom:15px;
 }
 
-.product-info h1 span {
-    color: #ff6a00;
+.product-details p{
+    color:#aaa;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
-.price {
-    color: #ff6a00;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 25px;
+.price{
+    color:#ff6a00;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:25px;
 }
 
-.description {
-    color: #bbbbbb;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 25px;
+
+/* FEATURES */
+
+.features{
+    margin-bottom:25px;
 }
 
-.features {
-    margin-bottom: 30px;
+.features h2{
+    font-size:20px;
+    margin-bottom:12px;
 }
 
-.features h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+.features ul{
+    padding-left:20px;
 }
 
-.features ul {
-    list-style: none;
+.features li{
+    color:#ccc;
+    margin-bottom:8px;
 }
 
-.features li {
-    color: #cccccc;
-    margin-bottom: 9px;
+
+/* QUANTITY */
+
+.quantity-title{
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.features li::before {
-    content: "✓";
-    color: #ff6a00;
-    font-weight: bold;
-    margin-right: 10px;
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
 }
 
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+.quantity-controls button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
 }
 
-.quantity label {
-    font-weight: bold;
+.quantity-controls button:hover{
+    background:#ff6a00;
 }
 
-.quantity input {
-    width: 70px;
-    padding: 10px;
-    background: #1b1b1b;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 6px;
-    text-align: center;
+.quantity-number{
+    width:40px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
 }
 
-.buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-button {
-    padding: 15px;
-    border-radius: 7px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
+.cart-btn,
+.buy-btn{
+    border:none;
+    padding:14px 22px;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.add-cart-btn {
-    background: #222;
-    color: white;
-    border: 1px solid #ff6a00;
+.cart-btn{
+    background:#ff6a00;
+    color:white;
 }
 
-.buy-btn {
-    background: #ff6a00;
-    color: white;
-    border: 1px solid #ff6a00;
+.cart-btn:hover{
+    background:#e85f00;
 }
 
-button:hover {
-    opacity: 0.85;
+.buy-btn{
+    background:white;
+    color:#111;
 }
 
-.message {
-    margin-top: 20px;
-    color: #ff6a00;
-    font-weight: bold;
+.buy-btn:hover{
+    background:#ddd;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    color: #ff6a00;
-    text-decoration: none;
-    font-weight: bold;
+
+/* INFO */
+
+.info-section{
+    background:#111;
+    text-align:center;
+    padding:60px 20px;
 }
 
-.product-details {
-    max-width: 1150px;
-    margin: 0 auto 70px;
-    padding: 40px 25px;
-    border-top: 1px solid #292929;
+.info-section h2{
+    font-size:30px;
+    margin-bottom:15px;
 }
 
-.product-details h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+.info-section h2 span{
+    color:#ff6a00;
 }
 
-.product-details h2 span {
-    color: #ff6a00;
+.info-section p{
+    max-width:750px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.8;
 }
 
-.product-details p {
-    color: #999999;
-    line-height: 1.7;
+
+/* FOOTER */
+
+footer{
+    background:#0b0b0b;
+    border-top:1px solid #292929;
+    text-align:center;
+    padding:25px;
+    color:#888;
 }
 
-footer {
-    background: #111;
-    border-top: 1px solid #292929;
-    padding: 35px;
-    text-align: center;
+footer strong{
+    color:#ff6a00;
 }
 
-.footer-logo {
-    color: #ff6a00;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
 
-footer p {
-    color: #888;
-    font-size: 13px;
-    margin: 6px;
-}
+/* MOBILE */
 
-@media (max-width: 800px) {
+@media(max-width:800px){
 
-    header {
-        flex-direction: column;
-        gap: 15px;
+    header{
+        flex-direction:column;
+        gap:15px;
     }
 
-    nav {
-        justify-content: center;
-        gap: 15px;
+    nav{
+        justify-content:center;
+        gap:15px;
     }
 
-    .product-container {
-        grid-template-columns: 1fr;
-        margin: 35px auto;
-        gap: 35px;
+    .product-section{
+        grid-template-columns:1fr;
+        margin-top:35px;
     }
 
-    .product-image img {
-        height: 430px;
+    .product-image img{
+        height:350px;
     }
 
-    .product-info h1 {
-        font-size: 34px;
+    .product-details h1{
+        font-size:32px;
     }
 
-    .buttons {
-        grid-template-columns: 1fr 1fr;
-    }
 }
+
 </style>
+
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
     <div class="logo">
-        RIDEVOLT
+        RideVolt
     </div>
 
     <nav>
+
         <a href="index.html">Home</a>
+
         <a href="products.html">Products</a>
+
         <a href="about.html">About</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="reviews.html">Reviews</a>
+
         <a href="contact.html">Contact</a>
+
         <a href="cart.html">🛒 Cart</a>
+
     </nav>
 
 </header>
 
-<section class="product-container">
+
+<!-- PRODUCT -->
+
+<section class="product-section">
+
+
+    <!-- IMAGE -->
 
     <div class="product-image">
 
@@ -286,154 +317,275 @@ footer p {
 
     </div>
 
-    <div class="product-info">
+
+    <!-- DETAILS -->
+
+    <div class="product-details">
 
         <h1>
-            VoltMount Phone <span>Holder</span>
+            VoltMount Phone Holder
         </h1>
+
+        <p>
+            Keep your smartphone secure and accessible while
+            riding with the VoltMount Phone Holder. Designed
+            for convenient navigation and everyday journeys.
+        </p>
+
 
         <div class="price">
             ₹699
         </div>
 
-        <p class="description">
-            Keep your phone secure and within easy reach while riding.
-            The VoltMount Phone Holder is designed for convenient
-            navigation and hands-free access on every journey.
-        </p>
+
+        <!-- FEATURES -->
 
         <div class="features">
 
-            <h3>Key Features</h3>
+            <h2>
+                Key Features
+            </h2>
 
             <ul>
-                <li>Secure phone grip</li>
-                <li>Easy to mount</li>
-                <li>Convenient for navigation</li>
-                <li>Durable riding design</li>
-                <li>Suitable for everyday rides</li>
-                <li>Easy access while riding</li>
+
+                <li>
+                    Secure phone grip
+                </li>
+
+                <li>
+                    Easy-to-use mounting design
+                </li>
+
+                <li>
+                    Suitable for motorcycle and bike rides
+                </li>
+
+                <li>
+                    Convenient navigation access
+                </li>
+
+                <li>
+                    Compact and practical design
+                </li>
+
             </ul>
 
         </div>
 
-        <div class="quantity">
 
-            <label for="quantity">
-                Quantity:
-            </label>
+        <!-- QUANTITY -->
 
-            <input
-                type="number"
-                id="quantity"
-                value="1"
-                min="1">
+        <div class="quantity-title">
+            Quantity
+        </div>
+
+        <div class="quantity-controls">
+
+            <button
+            onclick="decreaseQuantity()">
+                −
+            </button>
+
+            <span
+            id="quantity"
+            class="quantity-number">
+                1
+            </span>
+
+            <button
+            onclick="increaseQuantity()">
+                +
+            </button>
 
         </div>
+
+
+        <!-- BUTTONS -->
 
         <div class="buttons">
 
             <button
-                class="add-cart-btn"
-                onclick="addToCart()">
+            class="cart-btn"
+            onclick="addToCart()">
+
                 Add to Cart
+
             </button>
 
+
             <button
-                class="buy-btn"
-                onclick="buyNow()">
+            class="buy-btn"
+            onclick="buyNow()">
+
                 Buy Now
+
             </button>
 
         </div>
 
-        <div id="message" class="message"></div>
-
-        <a
-            href="products.html"
-            class="back-btn">
-            ← Back to Products
-        </a>
-
     </div>
 
 </section>
 
-<section class="product-details">
+
+<!-- INFO -->
+
+<section class="info-section">
 
     <h2>
-        Navigate. Ride. <span>Explore.</span>
+        Navigate. <span>Ride. Explore.</span>
     </h2>
 
     <p>
-        VoltMount Phone Holder helps riders keep their phone
-        visible and accessible while travelling. It is designed
-        for convenient navigation and everyday riding.
+        The VoltMount Phone Holder keeps your phone within
+        easy reach while riding, helping you navigate your
+        route and stay connected throughout your journey.
     </p>
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
 
-    <div class="footer-logo">
-        RIDEVOLT
-    </div>
-
     <p>
+        © 2026 <strong>RideVolt</strong>.
         Gear Up. Ride Further.
-    </p>
-
-    <p>
-        © 2026 RideVolt. All Rights Reserved.
     </p>
 
 </footer>
 
+
 <script>
 
-function getProduct() {
+/* PRODUCT */
 
-    let quantity =
-        parseInt(document.getElementById("quantity").value);
+const product = {
 
-    if (quantity < 1 || isNaN(quantity)) {
-        quantity = 1;
+    name: "VoltMount Phone Holder",
+
+    price: 699,
+
+    image:
+    "https://i5.walmartimages.com/asr/723d7a33-f0d7-4620-8540-309cbc641bc3.0162448e40d009f4d55eb461ba80801a.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000"
+
+};
+
+
+/* QUANTITY */
+
+let quantity = 1;
+
+
+/* PLUS */
+
+function increaseQuantity(){
+
+    quantity++;
+
+    document.getElementById("quantity")
+    .textContent = quantity;
+
+}
+
+
+/* MINUS */
+
+function decreaseQuantity(){
+
+    if(quantity > 1){
+
+        quantity--;
+
     }
 
-    return {
-        name: "VoltMount Phone Holder",
-        price: 699,
+    document.getElementById("quantity")
+    .textContent = quantity;
+
+}
+
+
+/* ADD TO CART */
+
+function addToCart(){
+
+    let cart =
+        JSON.parse(localStorage.getItem("ridevoltCart")) || [];
+
+
+    const existingProduct =
+        cart.find(item => item.name === product.name);
+
+
+    if(existingProduct){
+
+        existingProduct.quantity =
+            Number(existingProduct.quantity || 1)
+            + quantity;
+
+    }else{
+
+        cart.push({
+
+            name: product.name,
+
+            price: product.price,
+
+            quantity: quantity,
+
+            image: product.image
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "ridevoltCart",
+        JSON.stringify(cart)
+    );
+
+
+    alert(
+        product.name +
+        " added to cart!"
+    );
+
+}
+
+
+/* BUY NOW */
+
+function buyNow(){
+
+    const buyProduct = {
+
+        name: product.name,
+
+        price: product.price,
+
         quantity: quantity,
-        image: "https://i5.walmartimages.com/asr/723d7a33-f0d7-4620-8540-309cbc641bc3.0162448e40d009f4d55eb461ba80801a.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000"
+
+        image: product.image
+
     };
-}
 
-function addToCart() {
-
-    let product = getProduct();
 
     localStorage.setItem(
-        "ridevoltProduct",
-        JSON.stringify(product)
+        "ridevoltBuyNow",
+        JSON.stringify(buyProduct)
     );
 
-    document.getElementById("message").innerText =
-        "VoltMount Phone Holder added to cart!";
-}
 
-function buyNow() {
+    window.location.href =
+        "checkout.html";
 
-    let product = getProduct();
-
-    localStorage.setItem(
-        "ridevoltProduct",
-        JSON.stringify(product)
-    );
-
-    window.location.href = "checkout.html";
 }
 
 </script>
 
+
 </body>
+
 </html>

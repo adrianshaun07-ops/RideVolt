@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideVolt | Cart</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff6a00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff6a00;
+        }
+
+        .cart-section {
+            padding: 60px 7%;
+            min-height: 70vh;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h1 {
+            font-size: 40px;
+        }
+
+        .title span {
+            color: #ff6a00;
+        }
+
+        .cart-box {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .cart-item h2 {
+            margin-bottom: 8px;
+        }
+
+        .cart-item p {
+            color: #666;
+        }
+
+        .item-price {
+            color: #ff6a00;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6a00;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #111;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #ff6a00;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                display: none;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Ride<span>Volt</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">🛒 Cart</a>
+    </nav>
+
+</header>
+
+
+<section class="cart-section">
+
+    <div class="title">
+
+        <h1>
+            Your <span>Cart</span>
+        </h1>
+
+        <p>
+            Review your selected RideVolt gear.
+        </p>
+
+    </div>
+
+
+    <div class="cart-box" id="cartBox">
+
+        <!-- Cart contents will appear here -->
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <span>RideVolt</span>.
+        Gear Up. Ride Further.
+    </p>
+
+</footer>
+
+
+<script>
+
+function displayCart() {
+
+    let cartBox = document.getElementById("cartBox");
+
+    let savedProduct =
+        localStorage.getItem("ridevoltProduct");
+
+    if (!savedProduct) {
+
+        cartBox.innerHTML = `
+            <div class="empty">
+
+                <h2>Your cart is empty.</h2>
+
+                <p>
+                    Add some riding gear to your cart.
+                </p>
+
+                <a href="products.html" class="btn">
+                    Browse Products
+                </a>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    let product =
+        JSON.parse(savedProduct);
+
+
+    let quantity =
+        Number(product.quantity);
+
+
+    let total =
+        product.price * quantity;
+
+
+    cartBox.innerHTML = `
+
+        <div class="cart-item">
+
+            <div>
+
+                <h2>
+                    ${product.name}
+                </h2>
+
+                <p>
+                    Quantity: ${quantity}
+                </p>
+
+            </div>
+
+            <div class="item-price">
+                ₹${total.toLocaleString("en-IN")}
+            </div>
+
+        </div>
+
+
+        <div class="total">
+
+            Total:
+            ₹${total.toLocaleString("en-IN")}
+
+        </div>
+
+
+        <div style="text-align:right;">
+
+            <button
+                class="btn"
+                onclick="checkout()"
+            >
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    `;
+
+}
+
+
+function checkout() {
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+
+displayCart();
+
+</script>
+
+
+</body>
+
+</html>

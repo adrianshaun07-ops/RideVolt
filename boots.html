@@ -1,448 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoadForce Boots | RideVolt</title>
 
-    <title>RoadForce Boots | RideVolt</title>
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body{
+    background:#0b0b0b;
+    color:white;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0b;
-            color: white;
-            line-height: 1.6;
-        }
+header{
+    background:#111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-        /* NAVIGATION */
-        nav {
-            background: #111111;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #292929;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#ff6a00;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff6a00;
-            letter-spacing: 1px;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+nav a:hover{
+    color:#ff6a00;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+.product{
+    max-width:1100px;
+    margin:60px auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
 
-        nav ul li a:hover {
-            color: #ff6a00;
-        }
+.product img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:15px;
+}
 
-        /* PRODUCT SECTION */
-        .product-container {
-            max-width: 1150px;
-            margin: 60px auto;
-            padding: 0 25px;
+.product-info h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
 
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+.price{
+    color:#ff6a00;
+    font-size:28px;
+    font-weight:bold;
+    margin:20px 0;
+}
 
-        /* IMAGE */
-        .product-image-box {
-            background: #151515;
-            border: 1px solid #292929;
-            border-radius: 15px;
-            overflow: hidden;
-        }
+.description{
+    color:#ccc;
+    line-height:1.7;
+    margin-bottom:25px;
+}
 
-        .product-image {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            display: block;
-        }
+.features{
+    margin-bottom:25px;
+}
 
-        /* PRODUCT INFO */
-        .product-info h1 {
-            font-size: 42px;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
+.features li{
+    margin:10px 0;
+    color:#ddd;
+}
 
-        .product-info h1 span {
-            color: #ff6a00;
-        }
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:20px 0;
+}
 
-        .price {
-            color: #ff6a00;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+.quantity input{
+    width:70px;
+    padding:10px;
+    background:#222;
+    border:1px solid #444;
+    color:white;
+    border-radius:6px;
+    text-align:center;
+}
 
-        .description {
-            color: #bbbbbb;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
+.buttons{
+    display:flex;
+    gap:15px;
+}
 
-        /* FEATURES */
-        .features {
-            margin-bottom: 30px;
-        }
+button{
+    padding:14px 24px;
+    border:none;
+    border-radius:7px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-        .features h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
+.cart-btn{
+    background:#ff6a00;
+    color:white;
+}
 
-        .features ul {
-            list-style: none;
-        }
+.buy-btn{
+    background:white;
+    color:black;
+}
 
-        .features li {
-            color: #cccccc;
-            margin-bottom: 9px;
-        }
+button:hover{
+    opacity:0.85;
+}
 
-        .features li::before {
-            content: "✓";
-            color: #ff6a00;
-            font-weight: bold;
-            margin-right: 10px;
-        }
+.message{
+    margin-top:20px;
+    color:#ff6a00;
+    font-weight:bold;
+}
 
-        /* QUANTITY */
-        .quantity-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+footer{
+    background:#111;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    color:#aaa;
+}
 
-        .quantity-box label {
-            font-weight: bold;
-        }
+@media(max-width:768px){
 
-        .quantity-box input {
-            width: 70px;
-            padding: 10px;
-            background: #1b1b1b;
-            color: white;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 16px;
-            text-align: center;
-        }
+    .product{
+        grid-template-columns:1fr;
+        margin:30px auto;
+        gap:30px;
+    }
 
-        /* BUTTON */
-        .add-cart-btn {
-            width: 100%;
-            padding: 15px;
-            background: #ff6a00;
-            color: white;
-            border: none;
-            border-radius: 7px;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .product img{
+        height:350px;
+    }
 
-        .add-cart-btn:hover {
-            background: #e85d00;
-        }
+    .product-info h1{
+        font-size:32px;
+    }
 
-        .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            color: #ff6a00;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
 
-        .back-btn:hover {
-            text-decoration: underline;
-        }
+    nav a{
+        margin:0 6px;
+    }
 
-        /* EXTRA CONTENT */
-        .product-details {
-            max-width: 1150px;
-            margin: 0 auto 70px;
-            padding: 40px 25px;
-            border-top: 1px solid #292929;
-        }
-
-        .product-details h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        .product-details h2 span {
-            color: #ff6a00;
-        }
-
-        .product-details p {
-            color: #aaaaaa;
-            max-width: 850px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #111111;
-            border-top: 1px solid #292929;
-            padding: 35px 7%;
-            text-align: center;
-        }
-
-        footer .footer-logo {
-            color: #ff6a00;
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        footer p {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
-
-            nav ul li a {
-                font-size: 13px;
-            }
-
-            .product-container {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                margin: 40px auto;
-            }
-
-            .product-image {
-                height: 430px;
-            }
-
-            .product-info h1 {
-                font-size: 34px;
-            }
-        }
-    </style>
+    .buttons{
+        flex-direction:column;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+<header>
+
+    <div class="logo">RIDEVOLT</div>
+
     <nav>
-
-        <div class="logo">RIDEVOLT</div>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html">Cart</a></li>
-        </ul>
-
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
     </nav>
 
+</header>
 
-    <!-- PRODUCT -->
-    <main>
+<section class="product">
 
-        <div class="product-container">
+    <div>
+        <img
+        src="https://images.unsplash.com/photo-1582716510825-0ea3f7bd8334?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+        alt="RoadForce Boots">
+    </div>
 
-            <!-- BOOTS IMAGE -->
-            <div class="product-image-box">
+    <div class="product-info">
 
-                <img
-                    class="product-image"
-                    src="https://images.unsplash.com/photo-1582716510825-0ea3f7bd8334?auto=format&fit=crop&fm=jpg&q=85&w=1200"
-                    alt="Rider wearing motorcycle boots">
+        <h1>RoadForce Boots</h1>
 
-            </div>
+        <div class="price">₹2,999</div>
 
+        <p class="description">
+            Take on every journey with RoadForce Boots.
+            Built for riders who want comfort, durability and
+            dependable support on every ride.
+        </p>
 
-            <!-- PRODUCT INFORMATION -->
-            <div class="product-info">
+        <ul class="features">
+            <li>✔ Durable riding design</li>
+            <li>✔ Comfortable fit</li>
+            <li>✔ Strong ankle support</li>
+            <li>✔ Suitable for everyday rides</li>
+        </ul>
 
-                <h1>
-                    RoadForce <span>Boots</span>
-                </h1>
+        <div class="quantity">
 
-                <div class="price">
-                    ₹2,999
-                </div>
+            <label for="quantity">Quantity:</label>
 
-                <p class="description">
-                    Built for riders who demand stability, comfort and
-                    dependable protection, RoadForce Boots are designed
-                    to keep your feet ready for every road and every
-                    adventure.
-                </p>
-
-
-                <!-- FEATURES -->
-                <div class="features">
-
-                    <h3>Key Features</h3>
-
-                    <ul>
-                        <li>Durable motorcycle riding construction</li>
-                        <li>Protective ankle coverage</li>
-                        <li>Strong sole for riding stability</li>
-                        <li>Comfortable fit for longer rides</li>
-                        <li>Designed for everyday motorcycle use</li>
-                        <li>Suitable for touring and road adventures</li>
-                    </ul>
-
-                </div>
-
-
-                <!-- QUANTITY -->
-                <div class="quantity-box">
-
-                    <label for="quantity">
-                        Quantity:
-                    </label>
-
-                    <input
-                        type="number"
-                        id="quantity"
-                        value="1"
-                        min="1"
-                        max="10">
-
-                </div>
-
-
-                <!-- ADD TO CART -->
-                <button
-                    class="add-cart-btn"
-                    onclick="addToCart()">
-
-                    Add to Cart
-
-                </button>
-
-
-                <a
-                    href="products.html"
-                    class="back-btn">
-
-                    ← Back to Products
-
-                </a>
-
-            </div>
+            <input
+                type="number"
+                id="quantity"
+                value="1"
+                min="1">
 
         </div>
 
+        <div class="buttons">
 
-        <!-- EXTRA PRODUCT INFORMATION -->
-        <section class="product-details">
+            <button
+                class="cart-btn"
+                onclick="addToCart()">
+                Add to Cart
+            </button>
 
-            <h2>
-                Strong Steps. <span>Strong Rides.</span>
-            </h2>
+            <button
+                class="buy-btn"
+                onclick="buyNow()">
+                Buy Now
+            </button>
 
-            <p>
-                RoadForce Boots are designed to give riders dependable
-                foot and ankle coverage while maintaining comfort on
-                the road. From daily commuting to weekend adventures,
-                they're built to complement your riding gear.
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-logo">
-            RIDEVOLT
         </div>
 
-        <p>
-            Gear Up. Ride Further.
-        </p>
+        <div id="message" class="message"></div>
 
-        <p>
-            © 2026 RideVolt. All Rights Reserved.
-        </p>
+    </div>
 
-    </footer>
+</section>
 
+<footer>
+    © 2026 RideVolt | Gear Up. Ride Further.
+</footer>
 
-    <!-- CART SCRIPT -->
-    <script>
+<script>
 
-        function addToCart() {
+function getProduct(){
 
-            const quantity =
-                parseInt(document.getElementById("quantity").value);
+    let quantity =
+        parseInt(document.getElementById("quantity").value);
 
-            const product = {
+    return {
+        name: "RoadForce Boots",
+        price: 2999,
+        quantity: quantity,
+        image: "https://images.unsplash.com/photo-1582716510825-0ea3f7bd8334?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+    };
+}
 
-                name: "RoadForce Boots",
+function addToCart(){
 
-                price: 2999,
+    let product = getProduct();
 
-                quantity: quantity,
+    localStorage.setItem(
+        "ridevoltProduct",
+        JSON.stringify(product)
+    );
 
-                image: "https://images.unsplash.com/photo-1582716510825-0ea3f7bd8334?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+    document.getElementById("message").innerText =
+        "RoadForce Boots added to cart!";
+}
 
-            };
+function buyNow(){
 
-            localStorage.setItem(
-                "ridevoltProduct",
-                JSON.stringify(product)
-            );
+    let product = getProduct();
 
-            alert("RoadForce Boots added to cart!");
+    localStorage.setItem(
+        "ridevoltProduct",
+        JSON.stringify(product)
+    );
 
-        }
+    window.location.href = "checkout.html";
+}
 
-    </script>
+</script>
 
 </body>
 </html>

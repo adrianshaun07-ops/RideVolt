@@ -1,508 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RideVolt Pro Helmet | RideVolt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<title>RideVolt Pro Helmet</title>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0b;
-            color: white;
-            line-height: 1.6;
-        }
+<style>
 
-        /* NAVIGATION */
-        nav {
-            background: #111111;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #292929;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #ff6a00;
-            letter-spacing: 1px;
-        }
+body{
+    background:#0b0b0b;
+    color:white;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+/* HEADER */
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
+header{
+    background:#111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #292929;
+}
 
-        nav ul li a:hover {
-            color: #ff6a00;
-        }
+.logo{
+    color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
+}
 
-        /* PRODUCT SECTION */
-        .product-container {
-            max-width: 1150px;
-            margin: 60px auto;
-            padding: 0 25px;
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
 
-        /* IMAGE */
-        .product-image-box {
-            background: #151515;
-            border: 1px solid #292929;
-            border-radius: 15px;
-            overflow: hidden;
-        }
+nav a:hover{
+    color:#ff6a00;
+}
 
-        .product-image {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            display: block;
-        }
 
-        /* PRODUCT INFO */
-        .product-info h1 {
-            font-size: 42px;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
+/* PRODUCT */
 
-        .product-info h1 span {
-            color: #ff6a00;
-        }
+.product-section{
+    max-width:1100px;
+    margin:60px auto;
+    padding:0 25px;
 
-        .price {
-            color: #ff6a00;
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
 
-        .description {
-            color: #bbbbbb;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
 
-        /* FEATURES */
-        .features {
-            margin-bottom: 30px;
-        }
+/* IMAGE */
 
-        .features h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
+.product-image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:14px;
+}
 
-        .features ul {
-            list-style: none;
-        }
 
-        .features li {
-            color: #cccccc;
-            margin-bottom: 9px;
-        }
+/* DETAILS */
 
-        .features li::before {
-            content: "✓";
-            color: #ff6a00;
-            font-weight: bold;
-            margin-right: 10px;
-        }
+.product-details h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
 
-        /* QUANTITY */
-        .quantity-box {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
+.product-details p{
+    color:#aaa;
+    line-height:1.7;
+    margin-bottom:20px;
+}
 
-        .quantity-box label {
-            font-weight: bold;
-        }
+.price{
+    color:#ff6a00;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
 
-        .quantity-box input {
-            width: 70px;
-            padding: 10px;
-            background: #1b1b1b;
-            color: white;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 16px;
-            text-align: center;
-        }
 
-        /* BUTTONS */
-        .button-container {
-            display: flex;
-            gap: 12px;
-        }
+/* FEATURES */
 
-        .add-cart-btn,
-        .buy-now-btn {
-            flex: 1;
-            padding: 15px;
-            border-radius: 7px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.features{
+    margin-bottom:25px;
+}
 
-        .add-cart-btn {
-            background: #222222;
-            color: white;
-            border: 1px solid #ff6a00;
-        }
+.features h2{
+    font-size:20px;
+    margin-bottom:12px;
+}
 
-        .add-cart-btn:hover {
-            background: #ff6a00;
-        }
+.features ul{
+    padding-left:20px;
+}
 
-        .buy-now-btn {
-            background: #ff6a00;
-            color: white;
-            border: 1px solid #ff6a00;
-        }
+.features li{
+    color:#ccc;
+    margin-bottom:8px;
+}
 
-        .buy-now-btn:hover {
-            background: #e85d00;
-        }
 
-        .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            color: #ff6a00;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* QUANTITY */
 
-        .back-btn:hover {
-            text-decoration: underline;
-        }
+.quantity-title{
+    font-weight:bold;
+    margin-bottom:10px;
+}
 
-        /* EXTRA CONTENT */
-        .product-details {
-            max-width: 1150px;
-            margin: 0 auto 70px;
-            padding: 40px 25px;
-            border-top: 1px solid #292929;
-        }
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:25px;
+}
 
-        .product-details h2 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+.quantity-controls button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#222;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
 
-        .product-details h2 span {
-            color: #ff6a00;
-        }
+.quantity-controls button:hover{
+    background:#ff6a00;
+}
 
-        .product-details p {
-            color: #aaaaaa;
-            max-width: 850px;
-        }
+.quantity-number{
+    width:40px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
 
-        /* FOOTER */
-        footer {
-            background: #111111;
-            border-top: 1px solid #292929;
-            padding: 35px 7%;
-            text-align: center;
-        }
 
-        footer .footer-logo {
-            color: #ff6a00;
-            font-size: 25px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+/* BUTTONS */
 
-        footer p {
-            color: #888888;
-            font-size: 14px;
-        }
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
 
-        /* MOBILE */
-        @media (max-width: 800px) {
+.cart-btn,
+.buy-btn{
+    border:none;
+    padding:14px 22px;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
+.cart-btn{
+    background:#ff6a00;
+    color:white;
+}
 
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-            }
+.cart-btn:hover{
+    background:#e85f00;
+}
 
-            nav ul li a {
-                font-size: 13px;
-            }
+.buy-btn{
+    background:white;
+    color:#111;
+}
 
-            .product-container {
-                grid-template-columns: 1fr;
-                gap: 35px;
-                margin: 40px auto;
-            }
+.buy-btn:hover{
+    background:#ddd;
+}
 
-            .product-image {
-                height: 430px;
-            }
 
-            .product-info h1 {
-                font-size: 34px;
-            }
+/* EXTRA CONTENT */
 
-            .button-container {
-                flex-direction: column;
-            }
+.info-section{
+    background:#111;
+    text-align:center;
+    padding:60px 20px;
+}
 
-            .add-cart-btn,
-            .buy-now-btn {
-                width: 100%;
-            }
-        }
-    </style>
+.info-section h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.info-section h2 span{
+    color:#ff6a00;
+}
+
+.info-section p{
+    max-width:750px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.8;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#0b0b0b;
+    border-top:1px solid #292929;
+    text-align:center;
+    padding:25px;
+    color:#888;
+}
+
+footer strong{
+    color:#ff6a00;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:15px;
+    }
+
+    .product-section{
+        grid-template-columns:1fr;
+        margin-top:35px;
+    }
+
+    .product-image img{
+        height:350px;
+    }
+
+    .product-details h1{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        RideVolt
+    </div>
+
     <nav>
 
-        <div class="logo">RIDEVOLT</div>
+        <a href="index.html">Home</a>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html">Cart</a></li>
-        </ul>
+        <a href="products.html">Products</a>
+
+        <a href="about.html">About</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a href="reviews.html">Reviews</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="cart.html">🛒 Cart</a>
 
     </nav>
 
-
-    <!-- PRODUCT -->
-    <main>
-
-        <div class="product-container">
-
-            <!-- HELMET IMAGE -->
-            <div class="product-image-box">
-
-                <img
-                    class="product-image"
-                    src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
-                    alt="Rider wearing motorcycle helmet">
-
-            </div>
+</header>
 
 
-            <!-- PRODUCT INFORMATION -->
-            <div class="product-info">
+<!-- PRODUCT -->
 
-                <h1>
-                    RideVolt Pro <span>Helmet</span>
-                </h1>
-
-                <div class="price">
-                    ₹2,499
-                </div>
-
-                <p class="description">
-                    Ride with confidence using the RideVolt Pro Helmet.
-                    Designed for riders who want dependable protection,
-                    comfort and a bold look on every journey.
-                </p>
+<section class="product-section">
 
 
-                <!-- FEATURES -->
-                <div class="features">
+    <!-- IMAGE -->
 
-                    <h3>Key Features</h3>
+    <div class="product-image">
 
-                    <ul>
-                        <li>Full-face riding protection</li>
-                        <li>Comfortable inner padding</li>
-                        <li>Strong and durable outer shell</li>
-                        <li>Clear riding visor</li>
-                        <li>Secure adjustable chin strap</li>
-                        <li>Designed for everyday and long-distance rides</li>
-                    </ul>
+        <img
+        src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
+        alt="RideVolt Pro Helmet">
 
-                </div>
+    </div>
 
 
-                <!-- QUANTITY -->
-                <div class="quantity-box">
+    <!-- DETAILS -->
 
-                    <label for="quantity">
-                        Quantity:
-                    </label>
+    <div class="product-details">
 
-                    <input
-                        type="number"
-                        id="quantity"
-                        value="1"
-                        min="1"
-                        max="10">
+        <h1>
+            RideVolt Pro Helmet
+        </h1>
 
-                </div>
+        <p>
+            Ride with confidence using the RideVolt Pro Helmet.
+            Designed for riders who want dependable protection,
+            comfort and a modern riding experience.
+        </p>
 
 
-                <!-- BUTTONS -->
-                <div class="button-container">
-
-                    <button
-                        class="add-cart-btn"
-                        onclick="addToCart()">
-
-                        Add to Cart
-
-                    </button>
-
-                    <button
-                        class="buy-now-btn"
-                        onclick="buyNow()">
-
-                        Buy Now
-
-                    </button>
-
-                </div>
-
-
-                <a
-                    href="products.html"
-                    class="back-btn">
-
-                    ← Back to Products
-
-                </a>
-
-            </div>
-
+        <div class="price">
+            ₹2,499
         </div>
 
 
-        <!-- EXTRA PRODUCT INFORMATION -->
-        <section class="product-details">
+        <!-- FEATURES -->
+
+        <div class="features">
 
             <h2>
-                Built for the <span>Ride</span>
+                Key Features
             </h2>
 
-            <p>
-                The RideVolt Pro Helmet is designed for riders who value
-                protection, comfort and style. Whether you're commuting
-                through the city or heading out for a longer journey,
-                RideVolt helps you stay ready for the road.
-            </p>
+            <ul>
 
-        </section>
+                <li>
+                    Lightweight design
+                </li>
 
-    </main>
+                <li>
+                    Comfortable interior padding
+                </li>
 
+                <li>
+                    Secure helmet fit
+                </li>
 
-    <!-- FOOTER -->
-    <footer>
+                <li>
+                    Aerodynamic riding design
+                </li>
 
-        <div class="footer-logo">
-            RIDEVOLT
+                <li>
+                    Suitable for everyday riding
+                </li>
+
+            </ul>
+
         </div>
 
-        <p>
-            Gear Up. Ride Further.
-        </p>
 
-        <p>
-            © 2026 RideVolt. All Rights Reserved.
-        </p>
+        <!-- QUANTITY -->
 
-    </footer>
+        <div class="quantity-title">
+            Quantity
+        </div>
 
+        <div class="quantity-controls">
 
-    <!-- CART SCRIPT -->
-    <script>
-
-        function getProduct() {
-
-            const quantity =
-                parseInt(document.getElementById("quantity").value);
-
-            return {
-
-                name: "RideVolt Pro Helmet",
-
-                price: 2499,
-
-                quantity: quantity,
-
-                image: "https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
-
-            };
-
-        }
+            <button
+            onclick="decreaseQuantity()">
+                −
+            </button>
 
 
-        function addToCart() {
-
-            const product = getProduct();
-
-            localStorage.setItem(
-                "ridevoltProduct",
-                JSON.stringify(product)
-            );
-
-            alert("RideVolt Pro Helmet added to cart!");
-
-        }
+            <span
+            id="quantity"
+            class="quantity-number">
+                1
+            </span>
 
 
-        function buyNow() {
+            <button
+            onclick="increaseQuantity()">
+                +
+            </button>
 
-            const product = getProduct();
+        </div>
 
-            localStorage.setItem(
-                "ridevoltProduct",
-                JSON.stringify(product)
-            );
 
-            window.location.href = "checkout.html";
+        <!-- BUTTONS -->
 
-        }
+        <div class="buttons">
 
-    </script>
+            <button
+            class="cart-btn"
+            onclick="addToCart()">
+
+                Add to Cart
+
+            </button>
+
+
+            <button
+            class="buy-btn"
+            onclick="buyNow()">
+
+                Buy Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXTRA CONTENT -->
+
+<section class="info-section">
+
+    <h2>
+        Ride Safe. <span>Ride Further.</span>
+    </h2>
+
+    <p>
+        The RideVolt Pro Helmet is designed for riders who
+        value protection, comfort and confidence on every
+        journey. Choose the right gear and enjoy every mile.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>RideVolt</strong>.
+        Gear Up. Ride Further.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* PRODUCT INFORMATION */
+
+const product = {
+
+    name: "RideVolt Pro Helmet",
+
+    price: 2499,
+
+    image:
+    "https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
+
+};
+
+
+/* QUANTITY */
+
+let quantity = 1;
+
+
+/* PLUS */
+
+function increaseQuantity(){
+
+    quantity++;
+
+    document.getElementById("quantity")
+    .textContent = quantity;
+
+}
+
+
+/* MINUS */
+
+function decreaseQuantity(){
+
+    if(quantity > 1){
+
+        quantity--;
+
+    }
+
+    document.getElementById("quantity")
+    .textContent = quantity;
+
+}
+
+
+/* ADD TO CART */
+
+function addToCart(){
+
+    let cart =
+        JSON.parse(localStorage.getItem("ridevoltCart")) || [];
+
+
+    const existingProduct =
+        cart.find(item => item.name === product.name);
+
+
+    if(existingProduct){
+
+        existingProduct.quantity =
+            Number(existingProduct.quantity || 1)
+            + quantity;
+
+    }else{
+
+        cart.push({
+
+            name: product.name,
+
+            price: product.price,
+
+            quantity: quantity,
+
+            image: product.image
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "ridevoltCart",
+        JSON.stringify(cart)
+    );
+
+
+    alert(
+        product.name +
+        " added to cart!"
+    );
+
+}
+
+
+/* BUY NOW */
+
+function buyNow(){
+
+    const buyProduct = {
+
+        name: product.name,
+
+        price: product.price,
+
+        quantity: quantity,
+
+        image: product.image
+
+    };
+
+
+    localStorage.setItem(
+        "ridevoltBuyNow",
+        JSON.stringify(buyProduct)
+    );
+
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+</script>
+
 
 </body>
+
 </html>

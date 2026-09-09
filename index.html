@@ -1,40 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RideVolt | Gear Up. Ride Further.</title>
+<title>RideVolt | Gear Up. Ride Further.</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #111111;
-            line-height: 1.6;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        header {
-            background: #111111;
-            color: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+body{
+    background:#ffffff;
+    color:#222;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
+/* NAVBAR */
+
+header{
+    background:#111111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:white;
+}
+
+.logo span{
+    color:#ff6a00;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#ff6a00;
+}
+
+/* HERO */
+
+.hero{
+    min-height:520px;
+    background:
+    linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.65)),
+    url("https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero h1{
+    font-size:58px;
+    color:white;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#ff6a00;
+}
+
+.hero p{
+    font-size:20px;
+    color:#eeeeee;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff6a00;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:6px;
+    font-weight:bold;
+    margin:5px;
+}
+
+.btn:hover{
+    background:#e85f00;
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid #ff6a00;
+}
+
+/* WHY RIDEVOLT */
+
+.why{
+    padding:70px 8%;
+    text-align:center;
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.section-title span{
+    color:#ff6a00;
+}
+
+.why p{
+    max-width:850px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+}
+
+/* FEATURED */
+
+.featured{
+    background:#f5f5f5;
+    padding:70px 7%;
+    text-align:center;
+}
+
+.featured-subtitle{
+    color:#666;
+    margin-bottom:35px;
+}
+
+.products{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,0.10);
+    text-align:left;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.card p{
+    color:#777;
+    line-height:1.5;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.price{
+    color:#ff6a00;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.card-btn{
+    display:inline-block;
+    padding:11px 18px;
+    border:2px solid #ff6a00;
+    color:#ff6a00;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.card-btn:hover{
+    background:#ff6a00;
+    color:white;
+}
+
+/* CONTENT MARKETING */
+
+.content-section{
+    background:#111111;
+    color:white;
+    padding:70px 8%;
+    text-align:center;
+}
+
+.content-section h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.content-section h2 span{
+    color:#ff6a00;
+}
+
+.content-section p{
+    max-width:800px;
+    margin:0 auto 25px;
+    line-height:1.8;
+    color:#cccccc;
+}
+
+/* REVIEWS */
+
+.reviews{
+    padding:70px 8%;
+    text-align:center;
+}
+
+.review-grid{
+    max-width:1000px;
+    margin:35px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review-card{
+    background:#f5f5f5;
+    padding:25px;
+    border-radius:10px;
+}
+
+.stars{
+    color:#ff6a00;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.review-card p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.review-card strong{
+    color:#222;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#f5f5f5;
+    padding:60px 8%;
+    text-align:center;
+}
+
+.contact p{
+    color:#666;
+    margin:10px 0;
+}
+
+.contact-buttons{
+    margin-top:25px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111111;
+    color:#aaa;
+    text-align:center;
+    padding:30px 20px;
+}
+
+footer strong{
+    color:#ff6a00;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        position:relative;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        margin:5px 8px;
+    }
+
+    .hero{
+        min-height:450px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+
+    <div class="logo">
+        Ride<span>Volt</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="about.html">About</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a href="reviews.html">Reviews</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="cart.html">🛒 Cart</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Gear Up. <span>Ride Further.</span>
+        </h1>
+
+        <p>
+            Quality riding gear and accessories designed
+            to make every journey safer, smarter and more enjoyable.
+        </p>
+
+        <a href="products.html" class="btn">
+            Shop Now
+        </a>
+
+        <a href="about.html" class="btn btn-outline">
+            Discover RideVolt
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- WHY RIDEVOLT -->
+
+<section class="why">
+
+    <h2 class="section-title">
+        Why <span>RideVolt?</span>
+    </h2>
+
+    <p>
+        At RideVolt, we believe every ride deserves the right gear.
+        From safety essentials to practical riding accessories,
+        we bring together products that make every journey safer,
+        more comfortable and more exciting.
+    </p>
+
+</section>
+
+
+<!-- FEATURED GEAR -->
+
+<section class="featured">
+
+    <h2 class="section-title">
+        Featured <span>Gear</span>
+    </h2>
+
+    <p class="featured-subtitle">
+        Check out some of our rider favorites.
+    </p>
+
+
+    <div class="products">
+
+
+        <!-- HELMET -->
+
+        <div class="card">
+
+            <img
+            src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
+            alt="RideVolt Pro Helmet">
+
+            <div class="card-content">
+
+                <h3>
+                    RideVolt Pro Helmet
+                </h3>
+
+                <p>
+                    Lightweight protection with a modern
+                    aerodynamic design.
+                </p>
+
+                <div class="price">
+                    ₹2,499
+                </div>
+
+                <a
+                href="product-helmet.html"
+                class="card-btn">
+                    View Product
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- GLOVES -->
+
+        <div class="card">
+
+            <img
+            src="https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
+            alt="GripMax Riding Gloves">
+
+            <div class="card-content">
+
+                <h3>
+                    GripMax Riding Gloves
+                </h3>
+
+                <p>
+                    Comfortable gloves with enhanced grip
+                    and protection.
+                </p>
+
+                <div class="price">
+                    ₹899
+                </div>
+
+                <a
+                href="gloves.html"
+                class="card-btn">
+                    View Product
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SADDLE BAG -->
+
+        <div class="card">
+
+            <img
+            src="https://cdn-ak.f.st-hatena.com/images/fotolife/b/bikeblog/20250823/20250823172810.jpg"
+            alt="VoltPack Saddle Bag">
+
+            <div class="card-content">
+
+                <h3>
+                    VoltPack Saddle Bag
+                </h3>
+
+                <p>
+                    Water-resistant storage for your
+                    everyday rides.
+                </p>
+
+                <div class="price">
+                    ₹1,299
+                </div>
+
+                <a
+                href="voltpack.html"
+                class="card-btn">
+                    View Product
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTENT MARKETING -->
+
+<section class="content-section">
+
+    <h2>
+        Ride More. <span>Know More.</span>
+    </h2>
+
+    <p>
+        Explore our riding guides, safety tips and maintenance advice.
+        Our content helps riders make smarter choices before every journey.
+    </p>
+
+    <a href="blog.html" class="btn">
+        Read Our Blog
+    </a>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews">
+
+    <h2 class="section-title">
+        What Riders <span>Say</span>
+    </h2>
+
+
+    <div class="review-grid">
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The gear feels comfortable and reliable.
+                Perfect for my daily rides."
+            </p>
+
+            <strong>
+                — Arjun
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "I really liked the quality and design.
+                RideVolt has great riding products."
+            </p>
+
+            <strong>
+                — Rahul
+            </strong>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The products look great and are practical
+                for both short and long rides."
+            </p>
+
+            <strong>
+                — Kiran
+            </strong>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="reviews.html" class="btn">
+        See All Reviews
+    </a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <h2 class="section-title">
+        Need <span>Help?</span>
+    </h2>
+
+    <p>
+        Have a question about our products or your order?
+    </p>
+
+    <p>
+        Our RideVolt support team is here to help.
+    </p>
+
+    <div class="contact-buttons">
+
+        <a href="contact.html" class="btn">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>RideVolt</strong> |
+        Gear Up. Ride Further.
+    </p>
+
+</footer>
+
+</body>
+</html>            font-weight: bold;
             letter-spacing: 1px;
         }
 

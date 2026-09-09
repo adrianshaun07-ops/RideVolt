@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideVolt | Reviews</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #ff6a00;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff6a00;
+        }
+
+        .hero {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #ff6a00;
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .reviews {
+            padding: 65px 7%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            font-size: 35px;
+        }
+
+        .title span {
+            color: #ff6a00;
+        }
+
+        .review-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: #ff6a00;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .review-card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .review-card h3 {
+            font-size: 17px;
+        }
+
+        .review-card small {
+            color: #888;
+        }
+
+        .review-form {
+            max-width: 700px;
+            margin: 50px auto 0;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .review-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #111;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3e8;
+            border-left: 4px solid #ff6a00;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #ff6a00;
+        }
+
+        @media (max-width: 800px) {
+
+            nav {
+                display: none;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Ride<span>Volt</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="products.html">Products</a>
+
+        <a href="about.html">About</a>
+
+        <a href="blog.html">Blog</a>
+
+        <a href="reviews.html">Reviews</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="cart.html">🛒 Cart</a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="hero">
+
+    <h1>
+        Rider <span>Reviews</span>
+    </h1>
+
+    <p>
+        Real experiences from the RideVolt community.
+    </p>
+
+</section>
+
+
+
+<section class="reviews">
+
+
+    <div class="title">
+
+        <h2>
+            What Riders <span>Say</span>
+        </h2>
+
+        <p>
+            See what our customers think about RideVolt gear.
+        </p>
+
+    </div>
+
+
+
+    <div class="review-grid">
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The helmet feels comfortable and secure.
+                I really like the modern design too."
+            </p>
+
+            <h3>
+                Rahul
+            </h3>
+
+            <small>
+                Bengaluru
+            </small>
+
+        </div>
+
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "I bought the riding gloves and the grip
+                is excellent. Great for long rides."
+            </p>
+
+            <h3>
+                Arjun
+            </h3>
+
+            <small>
+                Mumbai
+            </small>
+
+        </div>
+
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The saddle bag is very useful during
+                weekend trips. Good storage and quality."
+            </p>
+
+            <h3>
+                Karan
+            </h3>
+
+            <small>
+                Pune
+            </small>
+
+        </div>
+
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★☆
+            </div>
+
+            <p>
+                "The phone mount is simple to install
+                and makes navigation much easier."
+            </p>
+
+            <h3>
+                Aditya
+            </h3>
+
+            <small>
+                Hyderabad
+            </small>
+
+        </div>
+
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "I loved the riding jacket. It looks stylish
+                and is comfortable on longer journeys."
+            </p>
+
+            <h3>
+                Rohan
+            </h3>
+
+            <small>
+                Chennai
+            </small>
+
+        </div>
+
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Good products and a smooth shopping
+                experience. RideVolt is impressive."
+            </p>
+
+            <h3>
+                Vikram
+            </h3>
+
+            <small>
+                Goa
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="review-form">
+
+        <h2>
+            Share Your Experience
+        </h2>
+
+        <form onsubmit="submitReview(event)">
+
+            <div class="form-group">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Rating
+                </label>
+
+                <select required>
+
+                    <option value="">
+                        Select Rating
+                    </option>
+
+                    <option>★★★★★ - Excellent</option>
+
+                    <option>★★★★☆ - Very Good</option>
+
+                    <option>★★★☆☆ - Good</option>
+
+                    <option>★★☆☆☆ - Average</option>
+
+                    <option>★☆☆☆☆ - Poor</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Review
+                </label>
+
+                <textarea
+                    placeholder="Tell us about your experience"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn"
+            >
+                Submit Review
+            </button>
+
+
+        </form>
+
+
+        <div
+            class="message"
+            id="message"
+        >
+            ✓ Thank you! Your review has been submitted.
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+    <p>
+        © 2026 <span>RideVolt</span>.
+        Gear Up. Ride Further.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function submitReview(event) {
+
+    event.preventDefault();
+
+    document.getElementById("message").style.display = "block";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltPack Saddle Bag | RideVolt</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: #000;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff6a00;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    .product {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      width: 420px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .details {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .details h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff6a00;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .details p {
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      margin-bottom: 25px;
+      color: #ddd;
+      line-height: 2;
+    }
+
+    .quantity {
+      padding: 12px;
+      width: 80px;
+      background: #333;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      background: #ff6a00;
+      color: white;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e65f00;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      color: #ff6a00;
+    }
+
+    #cartMessage {
+      margin-top: 20px;
+      color: #ff6a00;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RideVolt</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<section class="product">
+
+  <img
+    class="product-image"
+    src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80"
+    alt="VoltPack Saddle Bag"
+  >
+
+  <div class="details">
+
+    <h1>VoltPack Saddle Bag</h1>
+
+    <div class="price">₹1,299</div>
+
+    <p>
+      The VoltPack Saddle Bag gives riders a convenient and secure
+      way to carry essentials during everyday rides and long journeys.
+    </p>
+
+    <div class="features">
+      ✓ Durable riding design<br>
+      ✓ Compact storage<br>
+      ✓ Easy motorcycle attachment<br>
+      ✓ Ideal for daily and touring rides
+    </div>
+
+    <input
+      type="number"
+      id="quantity"
+      class="quantity"
+      value="1"
+      min="1"
+    >
+
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <div id="cartMessage"></div>
+
+    <a class="back" href="products.html">
+      ← Back to Products
+    </a>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 RideVolt. All Rights Reserved.
+</footer>
+
+<script>
+  function addToCart() {
+    let quantity = parseInt(document.getElementById("quantity").value);
+
+    let product = {
+      name: "VoltPack Saddle Bag",
+      price: 1299,
+      quantity: quantity
+    };
+
+    localStorage.setItem(
+      "ridevoltProduct",
+      JSON.stringify(product)
+    );
+
+    document.getElementById("cartMessage").innerHTML =
+      "Added to cart! <a href='cart.html' style='color:white;'>Go to Cart →</a>";
+  }
+</script>
+
+</body>
+</html>

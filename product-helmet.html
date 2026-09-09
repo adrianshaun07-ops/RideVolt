@@ -108,6 +108,7 @@
             margin-bottom: 25px;
         }
 
+        /* FEATURES */
         .features {
             margin-bottom: 30px;
         }
@@ -156,21 +157,40 @@
             text-align: center;
         }
 
-        /* BUTTON */
-        .add-cart-btn {
-            width: 100%;
+        /* BUTTONS */
+        .button-container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .add-cart-btn,
+        .buy-now-btn {
+            flex: 1;
             padding: 15px;
-            background: #ff6a00;
-            color: white;
-            border: none;
             border-radius: 7px;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
         }
 
+        .add-cart-btn {
+            background: #222222;
+            color: white;
+            border: 1px solid #ff6a00;
+        }
+
         .add-cart-btn:hover {
+            background: #ff6a00;
+        }
+
+        .buy-now-btn {
+            background: #ff6a00;
+            color: white;
+            border: 1px solid #ff6a00;
+        }
+
+        .buy-now-btn:hover {
             background: #e85d00;
         }
 
@@ -259,6 +279,15 @@
             .product-info h1 {
                 font-size: 34px;
             }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            .add-cart-btn,
+            .buy-now-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -294,7 +323,7 @@
                 <img
                     class="product-image"
                     src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
-                    alt="Rider wearing RideVolt style motorcycle helmet">
+                    alt="Rider wearing motorcycle helmet">
 
             </div>
 
@@ -351,14 +380,26 @@
                 </div>
 
 
-                <!-- ADD TO CART -->
-                <button
-                    class="add-cart-btn"
-                    onclick="addToCart()">
+                <!-- BUTTONS -->
+                <div class="button-container">
 
-                    Add to Cart
+                    <button
+                        class="add-cart-btn"
+                        onclick="addToCart()">
 
-                </button>
+                        Add to Cart
+
+                    </button>
+
+                    <button
+                        class="buy-now-btn"
+                        onclick="buyNow()">
+
+                        Buy Now
+
+                    </button>
+
+                </div>
 
 
                 <a
@@ -414,12 +455,12 @@
     <!-- CART SCRIPT -->
     <script>
 
-        function addToCart() {
+        function getProduct() {
 
             const quantity =
                 parseInt(document.getElementById("quantity").value);
 
-            const product = {
+            return {
 
                 name: "RideVolt Pro Helmet",
 
@@ -431,6 +472,13 @@
 
             };
 
+        }
+
+
+        function addToCart() {
+
+            const product = getProduct();
+
             localStorage.setItem(
                 "ridevoltProduct",
                 JSON.stringify(product)
@@ -440,486 +488,21 @@
 
         }
 
+
+        function buyNow() {
+
+            const product = getProduct();
+
+            localStorage.setItem(
+                "ridevoltProduct",
+                JSON.stringify(product)
+            );
+
+            window.location.href = "checkout.html";
+
+        }
+
     </script>
-
-</body>
-</html>
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ff6a00;
-    }
-
-    .product-section {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-      display: flex;
-      gap: 50px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .product-image {
-      width: 100%;
-      max-width: 500px;
-      height: 450px;
-      object-fit: cover;
-      border-radius: 15px;
-      display: block;
-    }
-
-    .product-details {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .product-details h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: #ff6a00;
-      font-size: 30px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .description {
-      color: #ccc;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .features {
-      color: #ddd;
-      line-height: 2;
-      margin-bottom: 25px;
-    }
-
-    .quantity {
-      width: 80px;
-      padding: 12px;
-      background: #333;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 16px;
-      margin-right: 10px;
-    }
-
-    .cart-button {
-      background: #ff6a00;
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 7px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .cart-button:hover {
-      background: #e65f00;
-    }
-
-    #cartMessage {
-      margin-top: 20px;
-      color: #ff6a00;
-      font-weight: bold;
-    }
-
-    #cartMessage a {
-      color: white;
-      margin-left: 8px;
-    }
-
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      color: white;
-      text-decoration: none;
-      border: 1px solid #ff6a00;
-      padding: 11px 18px;
-      border-radius: 6px;
-    }
-
-    .back-button:hover {
-      background: #ff6a00;
-    }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 25px;
-      color: #aaa;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 700px) {
-
-      header {
-        justify-content: center;
-      }
-
-      .logo {
-        width: 100%;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .product-details h1 {
-        font-size: 32px;
-      }
-
-      .product-image {
-        height: 350px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-
-  <div class="logo">
-    RideVolt
-  </div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">Cart</a>
-  </nav>
-
-</header>
-
-
-<section class="product-section">
-
-  <!-- REAL MOTOR
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ff6a00;
-    }
-
-    .product-section {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 20px;
-      display: flex;
-      gap: 50px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .product-image {
-      width: 100%;
-      max-width: 500px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      display: block;
-    }
-
-    .product-details {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .product-details h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: #ff6a00;
-      font-size: 30px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .description {
-      color: #ccc;
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .features {
-      color: #ddd;
-      line-height: 2;
-      margin-bottom: 25px;
-    }
-
-    .quantity {
-      width: 80px;
-      padding: 12px;
-      background: #333;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-size: 16px;
-      margin-right: 10px;
-    }
-
-    .cart-button {
-      background: #ff6a00;
-      color: white;
-      border: none;
-      padding: 14px 24px;
-      border-radius: 7px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .cart-button:hover {
-      background: #e65f00;
-    }
-
-    #cartMessage {
-      margin-top: 20px;
-      color: #ff6a00;
-      font-weight: bold;
-    }
-
-    #cartMessage a {
-      color: white;
-      margin-left: 8px;
-    }
-
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      color: white;
-      text-decoration: none;
-      border: 1px solid #ff6a00;
-      padding: 11px 18px;
-      border-radius: 6px;
-    }
-
-    .back-button:hover {
-      background: #ff6a00;
-    }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 25px;
-      color: #aaa;
-      margin-top: 50px;
-    }
-
-    @media (max-width: 700px) {
-
-      header {
-        justify-content: center;
-      }
-
-      .logo {
-        width: 100%;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
-      .product-section {
-        margin-top: 20px;
-      }
-
-      .product-details h1 {
-        font-size: 32px;
-      }
-
-      .product-image {
-        height: 300px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-
-    <div class="logo">
-      RideVolt
-    </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="blog.html">Blog</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="contact.html">Contact</a>
-      <a href="cart.html">Cart</a>
-    </nav>
-
-  </header>
-
-
-  <section class="product-section">
-
-    <img
-      class="product-image"
-      src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1000&q=85"
-      alt="RideVolt Pro Helmet - Motorcycle Rider"
-    >
-
-
-    <div class="product-details">
-
-      <h1>RideVolt Pro Helmet</h1>
-
-      <div class="price">
-        ₹2,499
-      </div>
-
-      <p class="description">
-        Ride with confidence using the RideVolt Pro Helmet.
-        Designed for everyday riders who want comfort,
-        protection and a stylish riding experience.
-      </p>
-
-
-      <div class="features">
-
-        ✓ Lightweight design<br>
-
-        ✓ Comfortable interior padding<br>
-
-        ✓ Strong protective shell<br>
-
-        ✓ Suitable for everyday riding<br>
-
-        ✓ Stylish modern design
-
-      </div>
-
-
-      <div>
-
-        <input
-          type="number"
-          id="quantity"
-          class="quantity"
-          value="1"
-          min="1"
-        >
-
-        <button
-          class="cart-button"
-          onclick="addToCart()"
-        >
-          Add to Cart
-        </button>
-
-      </div>
-
-
-      <div id="cartMessage"></div>
-
-
-      <a
-        href="products.html"
-        class="back-button"
-      >
-        ← Back to Products
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <footer>
-
-    © 2026 RideVolt. All Rights Reserved.
-
-  </footer>
-
-
-  <script>
-
-    function addToCart() {
-
-      let quantity =
-        parseInt(
-          document.getElementById("quantity").value
-        );
-
-      if (quantity < 1 || isNaN(quantity)) {
-
-        quantity = 1;
-
-      }
-
-
-      let product = {
-
-        name: "RideVolt Pro Helmet",
-
-        price: 2499,
-
-        quantity: quantity
-
-      };
-
-
-      localStorage.setItem(
-        "ridevoltProduct",
-        JSON.stringify(product)
-      );
-
-
-      document.getElementById("cartMessage").innerHTML =
-
-        "✓ Added to cart! " +
-
-        "<a href='cart.html'>Go to Cart →</a>";
-
-    }
-
-  </script>
 
 </body>
 </html>

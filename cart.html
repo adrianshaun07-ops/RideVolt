@@ -2,207 +2,397 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RideVolt | Cart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>RideVolt Cart</title>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #111;
-        }
+<style>
 
-        header {
-            background: #111;
-            color: white;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+body{
+    background:#f5f5f5;
+    color:#222;
+}
 
-        .logo span {
-            color: #ff6a00;
-        }
+/* HEADER */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+header{
+    background:#111;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #333;
+}
 
-        nav a:hover {
-            color: #ff6a00;
-        }
+.logo{
+    color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
+}
 
-        .cart-section {
-            padding: 60px 7%;
-            min-height: 70vh;
-        }
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        .title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
 
-        .title h1 {
-            font-size: 40px;
-        }
+nav a:hover{
+    color:#ff6a00;
+}
 
-        .title span {
-            color: #ff6a00;
-        }
 
-        .cart-box {
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+/* HERO */
 
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-        }
+.hero{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
 
-        .cart-item h2 {
-            margin-bottom: 8px;
-        }
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
+}
 
-        .cart-item p {
-            color: #666;
-        }
+.hero h1 span{
+    color:#ff6a00;
+}
 
-        .item-price {
-            color: #ff6a00;
-            font-weight: bold;
-            font-size: 20px;
-        }
+.hero p{
+    color:#bbb;
+}
 
-        .total {
-            text-align: right;
-            font-size: 25px;
-            font-weight: bold;
-            margin-top: 25px;
-        }
 
-        .btn {
-            display: inline-block;
-            background: #ff6a00;
-            color: white;
-            text-decoration: none;
-            padding: 13px 24px;
-            border-radius: 6px;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+/* CART SECTION */
 
-        .btn:hover {
-            background: #111;
-        }
+.cart-section{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
 
-        .empty {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
+.cart-box{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.10);
+}
 
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
 
-        footer span {
-            color: #ff6a00;
-        }
+/* CART ITEM */
 
-        @media (max-width: 700px) {
-            nav {
-                display: none;
-            }
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px 0;
+    border-bottom:1px solid #ddd;
+}
 
-            .cart-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-        }
-    </style>
+.cart-item img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.item-info{
+    flex:1;
+}
+
+.item-info h3{
+    margin-bottom:8px;
+    font-size:19px;
+}
+
+.item-price{
+    color:#ff6a00;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+
+/* QUANTITY CONTROLS */
+
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity-controls button{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:5px;
+    background:#111;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.quantity-controls button:hover{
+    background:#ff6a00;
+}
+
+.quantity-number{
+    min-width:30px;
+    text-align:center;
+    font-size:17px;
+    font-weight:bold;
+}
+
+
+/* RIGHT SIDE */
+
+.item-right{
+    text-align:right;
+    min-width:120px;
+}
+
+.item-total{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+
+/* DELETE BUTTON */
+
+.delete-btn{
+    border:none;
+    background:#e53935;
+    color:white;
+    padding:8px 13px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.delete-btn:hover{
+    background:#c62828;
+}
+
+
+/* CART TOTAL */
+
+.cart-total{
+    text-align:right;
+    padding-top:25px;
+}
+
+.cart-total h2{
+    margin-bottom:20px;
+}
+
+
+/* BUTTONS */
+
+.cart-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.clear-btn{
+    border:none;
+    background:#222;
+    color:white;
+    padding:13px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.clear-btn:hover{
+    background:#444;
+}
+
+.checkout-btn{
+    display:inline-block;
+    background:#ff6a00;
+    color:white;
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+.checkout-btn:hover{
+    background:#e85f00;
+}
+
+
+/* EMPTY CART */
+
+.empty{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.empty h2{
+    margin-bottom:12px;
+}
+
+.empty p{
+    color:#777;
+    margin-bottom:25px;
+}
+
+.shop-btn{
+    display:inline-block;
+    background:#ff6a00;
+    color:white;
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#999;
+    text-align:center;
+    padding:25px;
+    margin-top:80px;
+}
+
+footer strong{
+    color:#ff6a00;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:15px;
+    }
+
+    .cart-item{
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .cart-item img{
+        width:80px;
+        height:80px;
+    }
+
+    .item-info{
+        min-width:180px;
+    }
+
+    .item-right{
+        width:100%;
+        text-align:left;
+        margin-top:5px;
+    }
+
+    .cart-buttons{
+        justify-content:center;
+    }
+
+}
+
+</style>
+
 </head>
 
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
     <div class="logo">
-        Ride<span>Volt</span>
+        RideVolt
     </div>
 
     <nav>
+
         <a href="index.html">Home</a>
+
         <a href="products.html">Products</a>
+
         <a href="about.html">About</a>
+
         <a href="blog.html">Blog</a>
+
         <a href="reviews.html">Reviews</a>
+
         <a href="contact.html">Contact</a>
+
         <a href="cart.html">🛒 Cart</a>
+
     </nav>
 
 </header>
 
 
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1>
+        Your <span>Cart</span>
+    </h1>
+
+    <p>
+        Review and manage your RideVolt gear.
+    </p>
+
+</section>
+
+
+<!-- CART -->
+
 <section class="cart-section">
-
-    <div class="title">
-
-        <h1>
-            Your <span>Cart</span>
-        </h1>
-
-        <p>
-            Review your selected RideVolt gear.
-        </p>
-
-    </div>
-
 
     <div class="cart-box" id="cartBox">
 
-        <!-- Cart contents will appear here -->
+        <!-- Items will appear here -->
 
     </div>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <p>
-        © 2026 <span>RideVolt</span>.
+        © 2026 <strong>RideVolt</strong>.
         Gear Up. Ride Further.
     </p>
 
@@ -211,86 +401,225 @@
 
 <script>
 
-function displayCart() {
+/* GET CART */
 
-    let cartBox = document.getElementById("cartBox");
+function getCart(){
 
-    let savedProduct =
-        localStorage.getItem("ridevoltProduct");
+    let cart =
+        JSON.parse(localStorage.getItem("ridevoltCart"));
 
-    if (!savedProduct) {
+    /*
+       This also supports your old cart.
+       If an old single product exists,
+       it will be converted into a cart.
+    */
 
-        cartBox.innerHTML = `
-            <div class="empty">
+    if(!Array.isArray(cart)){
 
-                <h2>Your cart is empty.</h2>
+        let oldProduct =
+            JSON.parse(localStorage.getItem("ridevoltProduct"));
 
-                <p>
-                    Add some riding gear to your cart.
-                </p>
+        if(oldProduct){
 
-                <a href="products.html" class="btn">
-                    Browse Products
-                </a>
+            cart = [oldProduct];
 
-            </div>
-        `;
+            localStorage.setItem(
+                "ridevoltCart",
+                JSON.stringify(cart)
+            );
 
-        return;
+        }else{
+
+            cart = [];
+
+        }
+
     }
 
+    return cart;
 
-    let product =
-        JSON.parse(savedProduct);
-
-
-    let quantity =
-        Number(product.quantity);
+}
 
 
-    let total =
-        product.price * quantity;
+/* SAVE CART */
+
+function saveCart(cart){
+
+    localStorage.setItem(
+        "ridevoltCart",
+        JSON.stringify(cart)
+    );
+
+}
 
 
-    cartBox.innerHTML = `
+/* DISPLAY CART */
 
-        <div class="cart-item">
+function displayCart(){
 
-            <div>
+    const cartBox =
+        document.getElementById("cartBox");
+
+    const cart =
+        getCart();
+
+
+    /* EMPTY CART */
+
+    if(cart.length === 0){
+
+        cartBox.innerHTML = `
+
+            <div class="empty">
 
                 <h2>
-                    ${product.name}
+                    Your Cart is Empty
                 </h2>
 
                 <p>
-                    Quantity: ${quantity}
+                    Add some RideVolt gear to your cart.
                 </p>
 
+                <a
+                href="products.html"
+                class="shop-btn">
+
+                    Continue Shopping
+
+                </a>
+
             </div>
 
-            <div class="item-price">
+        `;
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    let itemsHTML = "";
+
+
+    /* CREATE EACH ITEM */
+
+    cart.forEach(function(product,index){
+
+        const quantity =
+            Number(product.quantity) || 1;
+
+        const price =
+            Number(product.price) || 0;
+
+        const itemTotal =
+            price * quantity;
+
+        total += itemTotal;
+
+
+        itemsHTML += `
+
+            <div class="cart-item">
+
+                <img
+                src="${product.image}"
+                alt="${product.name}">
+
+
+                <div class="item-info">
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <div class="item-price">
+                        ₹${price.toLocaleString("en-IN")}
+                    </div>
+
+
+                    <div class="quantity-controls">
+
+                        <button
+                        onclick="changeQuantity(${index}, -1)">
+                            −
+                        </button>
+
+
+                        <span class="quantity-number">
+                            ${quantity}
+                        </span>
+
+
+                        <button
+                        onclick="changeQuantity(${index}, 1)">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="item-right">
+
+                    <div class="item-total">
+                        ₹${itemTotal.toLocaleString("en-IN")}
+                    </div>
+
+
+                    <button
+                    class="delete-btn"
+                    onclick="deleteItem(${index})">
+
+                        🗑 Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    /* SHOW CART */
+
+    cartBox.innerHTML = `
+
+        ${itemsHTML}
+
+
+        <div class="cart-total">
+
+            <h2>
+                Total:
                 ₹${total.toLocaleString("en-IN")}
+            </h2>
+
+
+            <div class="cart-buttons">
+
+                <button
+                class="clear-btn"
+                onclick="clearCart()">
+
+                    Clear Cart
+
+                </button>
+
+
+                <a
+                href="checkout.html"
+                class="checkout-btn">
+
+                    Proceed to Checkout
+
+                </a>
+
             </div>
-
-        </div>
-
-
-        <div class="total">
-
-            Total:
-            ₹${total.toLocaleString("en-IN")}
-
-        </div>
-
-
-        <div style="text-align:right;">
-
-            <button
-                class="btn"
-                onclick="checkout()"
-            >
-                Proceed to Checkout
-            </button>
 
         </div>
 
@@ -299,13 +628,88 @@ function displayCart() {
 }
 
 
-function checkout() {
+/* PLUS / MINUS */
 
-    window.location.href =
-        "checkout.html";
+function changeQuantity(index,change){
+
+    let cart =
+        getCart();
+
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    let currentQuantity =
+        Number(cart[index].quantity) || 1;
+
+
+    currentQuantity =
+        currentQuantity + change;
+
+
+    /*
+       If quantity becomes 0,
+       automatically remove the item.
+    */
+
+    if(currentQuantity <= 0){
+
+        cart.splice(index,1);
+
+    }else{
+
+        cart[index].quantity =
+            currentQuantity;
+
+    }
+
+
+    saveCart(cart);
+
+    displayCart();
 
 }
 
+
+/* DELETE ONE PRODUCT */
+
+function deleteItem(index){
+
+    let cart =
+        getCart();
+
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    cart.splice(index,1);
+
+
+    saveCart(cart);
+
+    displayCart();
+
+}
+
+
+/* CLEAR EVERYTHING */
+
+function clearCart(){
+
+    localStorage.removeItem("ridevoltCart");
+
+    localStorage.removeItem("ridevoltProduct");
+
+    displayCart();
+
+}
+
+
+/* LOAD CART */
 
 displayCart();
 

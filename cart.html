@@ -128,7 +128,7 @@ nav a:hover{
 }
 
 
-/* QUANTITY CONTROLS */
+/* QUANTITY */
 
 .quantity-controls{
     display:flex;
@@ -163,7 +163,7 @@ nav a:hover{
 
 .item-right{
     text-align:right;
-    min-width:120px;
+    min-width:130px;
 }
 
 .item-total{
@@ -173,7 +173,7 @@ nav a:hover{
 }
 
 
-/* DELETE BUTTON */
+/* DELETE */
 
 .delete-btn{
     border:none;
@@ -190,7 +190,7 @@ nav a:hover{
 }
 
 
-/* CART TOTAL */
+/* TOTAL */
 
 .cart-total{
     text-align:right;
@@ -380,8 +380,6 @@ footer strong{
 
     <div class="cart-box" id="cartBox">
 
-        <!-- Items will appear here -->
-
     </div>
 
 </section>
@@ -408,31 +406,9 @@ function getCart(){
     let cart =
         JSON.parse(localStorage.getItem("ridevoltCart"));
 
-    /*
-       This also supports your old cart.
-       If an old single product exists,
-       it will be converted into a cart.
-    */
-
     if(!Array.isArray(cart)){
 
-        let oldProduct =
-            JSON.parse(localStorage.getItem("ridevoltProduct"));
-
-        if(oldProduct){
-
-            cart = [oldProduct];
-
-            localStorage.setItem(
-                "ridevoltCart",
-                JSON.stringify(cart)
-            );
-
-        }else{
-
-            cart = [];
-
-        }
+        cart = [];
 
     }
 
@@ -464,7 +440,7 @@ function displayCart(){
         getCart();
 
 
-    /* EMPTY CART */
+    /* EMPTY */
 
     if(cart.length === 0){
 
@@ -502,7 +478,7 @@ function displayCart(){
     let itemsHTML = "";
 
 
-    /* CREATE EACH ITEM */
+    /* EACH PRODUCT */
 
     cart.forEach(function(product,index){
 
@@ -541,18 +517,16 @@ function displayCart(){
                     <div class="quantity-controls">
 
                         <button
-                        onclick="changeQuantity(${index}, -1)">
+                        onclick="changeQuantity(${index},-1)">
                             −
                         </button>
-
 
                         <span class="quantity-number">
                             ${quantity}
                         </span>
 
-
                         <button
-                        onclick="changeQuantity(${index}, 1)">
+                        onclick="changeQuantity(${index},1)">
                             +
                         </button>
 
@@ -566,7 +540,6 @@ function displayCart(){
                     <div class="item-total">
                         ₹${itemTotal.toLocaleString("en-IN")}
                     </div>
-
 
                     <button
                     class="delete-btn"
@@ -585,7 +558,7 @@ function displayCart(){
     });
 
 
-    /* SHOW CART */
+    /* TOTAL */
 
     cartBox.innerHTML = `
 
@@ -641,29 +614,25 @@ function changeQuantity(index,change){
     }
 
 
-    let currentQuantity =
+    let quantity =
         Number(cart[index].quantity) || 1;
 
 
-    currentQuantity =
-        currentQuantity + change;
+    quantity =
+        quantity + change;
 
 
-    /*
-       If quantity becomes 0,
-       automatically remove the item.
-    */
+    /* DO NOT GO BELOW 1 */
 
-    if(currentQuantity <= 0){
+    if(quantity < 1){
 
-        cart.splice(index,1);
-
-    }else{
-
-        cart[index].quantity =
-            currentQuantity;
+        quantity = 1;
 
     }
+
+
+    cart[index].quantity =
+        quantity;
 
 
     saveCart(cart);
@@ -696,20 +665,18 @@ function deleteItem(index){
 }
 
 
-/* CLEAR EVERYTHING */
+/* CLEAR ENTIRE CART */
 
 function clearCart(){
 
     localStorage.removeItem("ridevoltCart");
-
-    localStorage.removeItem("ridevoltProduct");
 
     displayCart();
 
 }
 
 
-/* LOAD CART */
+/* START */
 
 displayCart();
 

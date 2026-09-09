@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GripMax Riding Gloves | RideVolt</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #111111;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #292929;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff6a00;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6a00;
+        }
+
+        /* PRODUCT SECTION */
+        .product-container {
+            max-width: 1150px;
+            margin: 60px auto;
+            padding: 0 25px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* IMAGE */
+        .product-image-box {
+            background: #151515;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* PRODUCT INFO */
+        .product-info h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .product-info h1 span {
+            color: #ff6a00;
+        }
+
+        .price {
+            color: #ff6a00;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            color: #bbbbbb;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* FEATURES */
+        .features {
+            margin-bottom: 30px;
+        }
+
+        .features h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .features ul {
+            list-style: none;
+        }
+
+        .features li {
+            color: #cccccc;
+            margin-bottom: 9px;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #ff6a00;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* QUANTITY */
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-box label {
+            font-weight: bold;
+        }
+
+        .quantity-box input {
+            width: 70px;
+            padding: 10px;
+            background: #1b1b1b;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* BUTTON */
+        .add-cart-btn {
+            width: 100%;
+            padding: 15px;
+            background: #ff6a00;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .add-cart-btn:hover {
+            background: #e85d00;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff6a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* EXTRA CONTENT */
+        .product-details {
+            max-width: 1150px;
+            margin: 0 auto 70px;
+            padding: 40px 25px;
+            border-top: 1px solid #292929;
+        }
+
+        .product-details h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .product-details h2 span {
+            color: #ff6a00;
+        }
+
+        .product-details p {
+            color: #aaaaaa;
+            max-width: 850px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111111;
+            border-top: 1px solid #292929;
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            color: #ff6a00;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #888888;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                margin: 40px auto;
+            }
+
+            .product-image {
+                height: 430px;
+            }
+
+            .product-info h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <div class="logo">RIDEVOLT</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- PRODUCT -->
+    <main>
+
+        <div class="product-container">
+
+            <!-- GLOVES IMAGE -->
+            <div class="product-image-box">
+
+                <img
+                    class="product-image"
+                    src="https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
+                    alt="Black motorcycle riding gloves">
+
+            </div>
+
+
+            <!-- PRODUCT INFORMATION -->
+            <div class="product-info">
+
+                <h1>
+                    GripMax Riding <span>Gloves</span>
+                </h1>
+
+                <div class="price">
+                    ₹899
+                </div>
+
+                <p class="description">
+                    Take control of every ride with GripMax Riding Gloves.
+                    Designed to provide a secure grip, comfort and protection
+                    while keeping your hands ready for every road.
+                </p>
+
+
+                <!-- FEATURES -->
+                <div class="features">
+
+                    <h3>Key Features</h3>
+
+                    <ul>
+                        <li>Enhanced grip for better handlebar control</li>
+                        <li>Durable riding construction</li>
+                        <li>Comfortable fit for long rides</li>
+                        <li>Protective palm design</li>
+                        <li>Breathable material for improved comfort</li>
+                        <li>Suitable for everyday and touring rides</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+                <div class="quantity-box">
+
+                    <label for="quantity">
+                        Quantity:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                        max="10">
+
+                </div>
+
+
+                <!-- ADD TO CART -->
+                <button
+                    class="add-cart-btn"
+                    onclick="addToCart()">
+
+                    Add to Cart
+
+                </button>
+
+
+                <a
+                    href="products.html"
+                    class="back-btn">
+
+                    ← Back to Products
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXTRA PRODUCT INFORMATION -->
+        <section class="product-details">
+
+            <h2>
+                Grip. Control. <span>Ride.</span>
+            </h2>
+
+            <p>
+                GripMax Riding Gloves are made for riders who want better
+                control and dependable hand protection. From daily
+                commuting to weekend adventures, RideVolt keeps your
+                hands comfortable and ready for the road.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            RIDEVOLT
+        </div>
+
+        <p>
+            Gear Up. Ride Further.
+        </p>
+
+        <p>
+            © 2026 RideVolt. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- CART SCRIPT -->
+    <script>
+
+        function addToCart() {
+
+            const quantity =
+                parseInt(document.getElementById("quantity").value);
+
+            const product = {
+
+                name: "GripMax Riding Gloves",
+
+                price: 899,
+
+                quantity: quantity,
+
+                image: "https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
+
+            };
+
+            localStorage.setItem(
+                "ridevoltProduct",
+                JSON.stringify(product)
+            );
+
+            alert("GripMax Riding Gloves added to cart!");
+
+        }
+
+    </script>
+
+</body>
+</html>
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    .product-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 500px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      display: block;
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .product-details h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff6a00;
+      font-size: 30px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .description {
+      color: #ccc;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      color: #ddd;
+      line-height: 2;
+      margin-bottom: 25px;
+    }
+
+    .quantity {
+      width: 80px;
+      padding: 12px;
+      background: #333;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    .cart-button {
+      background: #ff6a00;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .cart-button:hover {
+      background: #e65f00;
+    }
+
+    #cartMessage {
+      margin-top: 20px;
+      color: #ff6a00;
+      font-weight: bold;
+    }
+
+    #cartMessage a {
+      color: white;
+      margin-left: 8px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #ff6a00;
+      padding: 11px 18px;
+      border-radius: 6px;
+    }
+
+    .back-button:hover {
+      background: #ff6a00;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        justify-content: center;
+      }
+
+      .logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .product-details h1 {
+        font-size: 32px;
+      }
+
+      .product-image {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      RideVolt
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+
+  </header>
+
+
+  <section class="product-section">
+
+    <!-- Riding gloves picture -->
+    <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=85"
+      alt="GripMax Riding Gloves"
+    >
+
+
+    <div class="product-details">
+
+      <h1>GripMax Riding Gloves</h1>
+
+      <div class="price">
+        ₹899
+      </div>
+
+      <p class="description">
+        GripMax Riding Gloves are designed to give riders
+        a comfortable and secure grip while providing
+        protection during everyday motorcycle rides.
+      </p>
+
+
+      <div class="features">
+
+        ✓ Comfortable riding fit<br>
+
+        ✓ Strong grip design<br>
+
+        ✓ Protective knuckle area<br>
+
+        ✓ Breathable construction<br>
+
+        ✓ Suitable for everyday riding
+
+      </div>
+
+
+      <div>
+
+        <input
+          type="number"
+          id="quantity"
+          class="quantity"
+          value="1"
+          min="1"
+        >
+
+        <button
+          class="cart-button"
+          onclick="addToCart()"
+        >
+          Add to Cart
+        </button>
+
+      </div>
+
+
+      <div id="cartMessage"></div>
+
+
+      <a
+        href="products.html"
+        class="back-button"
+      >
+        ← Back to Products
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    © 2026 RideVolt. All Rights Reserved.
+
+  </footer>
+
+
+  <script>
+
+    function addToCart() {
+
+      let quantity =
+        parseInt(
+          document.getElementById("quantity").value
+        );
+
+      if (quantity < 1 || isNaN(quantity)) {
+        quantity = 1;
+      }
+
+      let product = {
+
+        name: "GripMax Riding Gloves",
+
+        price: 899,
+
+        quantity: quantity
+
+      };
+
+      localStorage.setItem(
+        "ridevoltProduct",
+        JSON.stringify(product)
+      );
+
+      document.getElementById("cartMessage").innerHTML =
+
+        "✓ Added to cart! " +
+
+        "<a href='cart.html'>Go to Cart →</a>";
+
+    }
+
+  </script>
+
+</body>
+</html>      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    .product {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #1c1c1c;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 500px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: #ff6a00;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .description {
+      color: #ccc;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .features {
+      text-align: left;
+      max-width: 500px;
+      margin: 20px auto;
+      color: #ddd;
+      line-height: 2;
+    }
+
+    .quantity {
+      margin: 25px 0;
+    }
+
+    .quantity input {
+      width: 70px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button, .back {
+      display: inline-block;
+      padding: 14px 25px;
+      margin: 8px;
+      border: none;
+      border-radius: 6px;
+      background: #ff6a00;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back {
+      background: #333;
+    }
+
+    button:hover, .back:hover {
+      opacity: 0.85;
+    }
+
+    #cartMessage {
+      margin-top: 20px;
+      color: #ff6a00;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">RideVolt</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<section class="product">
+
+  <img
+    src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80"
+    alt="GripMax Riding Gloves"
+  >
+
+  <h1>GripMax Riding Gloves</h1>
+
+  <div class="price">₹899</div>
+
+  <p class="description">
+    Ride with confidence and control. GripMax Riding Gloves are designed
+    to provide comfort, protection and a strong grip during every ride.
+  </p>
+
+  <div class="features">
+    <p>✓ Strong and comfortable grip</p>
+    <p>✓ Protective riding design</p>
+    <p>✓ Comfortable fit</p>
+    <p>✓ Suitable for everyday riding</p>
+  </div>
+
+  <div class="quantity">
+    <label>Quantity: </label>
+    <input type="number" id="quantity" value="1" min="1">
+  </div>
+
+  <button onclick="addToCart()">Add to Cart</button>
+
+  <a class="back" href="products.html">← Back to Products</a>
+
+  <div id="cartMessage"></div>
+
+</section>
+
+<footer>
+  © 2026 RideVolt. All Rights Reserved.
+</footer>
+
+<script>
+  function addToCart() {
+
+    let quantity = parseInt(document.getElementById("quantity").value);
+
+    let product = {
+      name: "GripMax Riding Gloves",
+      price: 899,
+      quantity: quantity
+    };
+
+    localStorage.setItem(
+      "ridevoltProduct",
+      JSON.stringify(product)
+    );
+
+    document.getElementById("cartMessage").innerHTML =
+      "Added to cart! <a href='cart.html' style='color:#ff6a00;'>View Cart</a>";
+  }
+</script>
+
+</body>
+</html>

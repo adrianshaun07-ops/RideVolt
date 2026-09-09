@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RideVolt Products</title>
+<title>Products | RideVolt</title>
 
 <style>
 
@@ -34,9 +34,9 @@ header{
 }
 
 .logo{
-    font-size:26px;
-    font-weight:bold;
     color:#ff6a00;
+    font-size:24px;
+    font-weight:bold;
 }
 
 nav{
@@ -55,16 +55,16 @@ nav a:hover{
     color:#ff6a00;
 }
 
+
 /* HERO */
 
 .hero{
     text-align:center;
-    padding:65px 20px 45px;
-    background:#111;
+    padding:55px 20px 35px;
 }
 
 .hero h1{
-    font-size:45px;
+    font-size:42px;
     margin-bottom:15px;
 }
 
@@ -73,101 +73,110 @@ nav a:hover{
 }
 
 .hero p{
-    color:#aaa;
     max-width:700px;
     margin:auto;
+    color:#aaa;
     line-height:1.7;
 }
+
 
 /* PRODUCTS */
 
 .products-section{
-    padding:60px 7%;
-}
-
-.products-grid{
-    max-width:1150px;
-    margin:auto;
+    max-width:1200px;
+    margin:20px auto 70px;
+    padding:0 25px;
 
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:20px;
 }
 
-/* CARD */
+
+/* PRODUCT CARD */
 
 .product-card{
     background:#151515;
-    border:1px solid #292929;
-    border-radius:12px;
+    border:1px solid #262626;
+    border-radius:10px;
     overflow:hidden;
     transition:0.3s;
 }
 
 .product-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-5px);
     border-color:#ff6a00;
 }
 
+
+/* PRODUCT IMAGE */
+
 .product-card img{
     width:100%;
-    height:270px;
+    height:230px;
     object-fit:cover;
     display:block;
 }
 
-/* CARD CONTENT */
 
-.product-content{
-    padding:22px;
+/* PRODUCT INFO */
+
+.product-info{
+    padding:16px;
 }
 
-.product-content h2{
-    font-size:21px;
-    margin-bottom:10px;
+.product-info h2{
+    font-size:18px;
+    margin-bottom:8px;
 }
 
-.product-content p{
-    color:#aaa;
+.product-info p{
+    color:#999;
+    font-size:13px;
     line-height:1.6;
-    font-size:14px;
-    min-height:68px;
+    min-height:42px;
+    margin-bottom:12px;
 }
 
 .price{
     color:#ff6a00;
-    font-size:21px;
+    font-size:18px;
     font-weight:bold;
-    margin:15px 0;
+    margin-bottom:14px;
 }
 
-.view-btn{
-    display:inline-block;
+
+/* BUTTON */
+
+.product-btn{
+    display:block;
     width:100%;
-    text-align:center;
-    padding:12px;
     background:#ff6a00;
     color:white;
     text-decoration:none;
-    border-radius:6px;
+    text-align:center;
+    padding:10px;
+    border-radius:5px;
+    font-size:14px;
     font-weight:bold;
 }
 
-.view-btn:hover{
+.product-btn:hover{
     background:#e85f00;
 }
+
 
 /* CONTENT MARKETING */
 
 .content-marketing{
     background:#111;
     text-align:center;
-    padding:65px 20px;
-    margin-top:20px;
+    padding:60px 20px;
+    border-top:1px solid #292929;
 }
 
 .content-marketing h2{
-    font-size:32px;
+    font-size:30px;
     margin-bottom:15px;
 }
 
@@ -182,13 +191,14 @@ nav a:hover{
     line-height:1.8;
 }
 
+
 /* FOOTER */
 
 footer{
     background:#0b0b0b;
     border-top:1px solid #292929;
     text-align:center;
-    padding:30px;
+    padding:25px;
     color:#888;
 }
 
@@ -196,9 +206,18 @@ footer strong{
     color:#ff6a00;
 }
 
+
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width:900px){
+
+    .products-section{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
 
     header{
         flex-direction:column;
@@ -207,15 +226,20 @@ footer strong{
 
     nav{
         justify-content:center;
-        gap:15px;
+        gap:14px;
     }
 
     .hero h1{
-        font-size:36px;
+        font-size:32px;
     }
 
-    .products-grid{
+    .products-section{
         grid-template-columns:1fr;
+        padding:0 20px;
+    }
+
+    .product-card img{
+        height:260px;
     }
 
 }
@@ -233,7 +257,7 @@ footer strong{
 <header>
 
     <div class="logo">
-        RIDEVOLT
+        RideVolt
     </div>
 
     <nav>
@@ -262,7 +286,7 @@ footer strong{
 <section class="hero">
 
     <h1>
-        RideVolt <span>Gear</span>
+        Our <span>Riding Gear</span>
     </h1>
 
     <p>
@@ -278,316 +302,312 @@ footer strong{
 
 <section class="products-section">
 
-<div class="products-grid">
 
+    <!-- 1. HELMET -->
 
-<!-- 1. HELMET -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.unsplash.com/photo-1600705722908-bab1e61c0b4d?auto=format&fit=crop&fm=jpg&q=85&w=1000"
+        alt="RideVolt Pro Helmet">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="RideVolt Pro Helmet">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                RideVolt Pro Helmet
+            </h2>
 
-        <h2>
-            RideVolt Pro Helmet
-        </h2>
+            <p>
+                High-quality riding protection with a
+                modern aerodynamic design.
+            </p>
 
-        <p>
-            Lightweight riding protection with a modern
-            aerodynamic design.
-        </p>
+            <div class="price">
+                ₹2,499
+            </div>
 
-        <div class="price">
-            ₹2,499
+            <a
+            href="product-helmet.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="product-helmet.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 2. GLOVES -->
 
-<!-- 2. GLOVES -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.pexels.com/photos/33962884/pexels-photo-33962884.jpeg?cs=srgb&dl=pexels-joey-cede-2152653963-33962884.jpg&fm=jpg"
+        alt="GripMax Riding Gloves">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="GripMax Riding Gloves">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                GripMax Riding Gloves
+            </h2>
 
-        <h2>
-            GripMax Riding Gloves
-        </h2>
+            <p>
+                Comfortable riding gloves designed for
+                better grip, control and protection.
+            </p>
 
-        <p>
-            Comfortable riding gloves designed for better
-            grip, control and protection.
-        </p>
+            <div class="price">
+                ₹899
+            </div>
 
-        <div class="price">
-            ₹899
+            <a
+            href="gloves.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="gloves.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 3. SADDLE BAG -->
 
-<!-- 3. SADDLE BAG -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://cdn-ak.f.st-hatena.com/images/fotolife/b/bikeblog/20250823/20250823172810.jpg"
+        alt="VoltPack Saddle Bag">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="VoltPack Saddle Bag">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                VoltPack Saddle Bag
+            </h2>
 
-        <h2>
-            VoltPack Saddle Bag
-        </h2>
+            <p>
+                Practical storage for carrying your essentials
+                during everyday and long rides.
+            </p>
 
-        <p>
-            Practical storage for carrying your essentials
-            during everyday and long rides.
-        </p>
+            <div class="price">
+                ₹1,299
+            </div>
 
-        <div class="price">
-            ₹1,299
+            <a
+            href="voltpack.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="voltpack.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 4. JACKET -->
 
-<!-- 4. JACKET -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.unsplash.com/photo-1609743268259-a02b275637ff?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+        alt="RideShield Jacket">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="RideShield Jacket">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                RideShield Jacket
+            </h2>
 
-        <h2>
-            RideShield Jacket
-        </h2>
+            <p>
+                Comfortable and durable riding jacket
+                designed for everyday and long-distance rides.
+            </p>
 
-        <p>
-            Comfortable and durable riding jacket designed
-            for everyday and long-distance rides.
-        </p>
+            <div class="price">
+                ₹3,999
+            </div>
 
-        <div class="price">
-            ₹3,999
+            <a
+            href="jacket.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="jacket.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 5. PHONE HOLDER -->
 
-<!-- 5. PHONE HOLDER -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://i5.walmartimages.com/asr/723d7a33-f0d7-4620-8540-309cbc641bc3.0162448e40d009f4d55eb461ba80801a.jpeg?odnBg=FFFFFF&odnHeight=2000&odnWidth=2000"
+        alt="VoltMount Phone Holder">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="VoltMount Phone Holder">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                VoltMount Phone Holder
+            </h2>
 
-        <h2>
-            VoltMount Phone Holder
-        </h2>
+            <p>
+                Keep your phone secure and accessible while
+                navigating on the road.
+            </p>
 
-        <p>
-            Keep your phone secure and accessible while
-            navigating on the road.
-        </p>
+            <div class="price">
+                ₹699
+            </div>
 
-        <div class="price">
-            ₹699
+            <a
+            href="mount.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="mount.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 6. SUNGLASSES -->
 
-<!-- 6. SUNGLASSES -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+        alt="RoadVision Sunglasses">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="RoadVision Sunglasses">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                RoadVision Sunglasses
+            </h2>
 
-        <h2>
-            RoadVision Sunglasses
-        </h2>
+            <p>
+                Stylish and lightweight riding sunglasses
+                for comfortable outdoor journeys.
+            </p>
 
-        <p>
-            Stylish and lightweight riding sunglasses for
-            comfortable outdoor journeys.
-        </p>
+            <div class="price">
+                ₹799
+            </div>
 
-        <div class="price">
-            ₹799
+            <a
+            href="glasses.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="glasses.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 7. KNEE GUARDS -->
 
-<!-- 7. KNEE GUARDS -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://m.media-amazon.com/images/I/81eF88bBlTL._SL1500_.jpg"
+        alt="GuardPro Knee Guards">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="GuardPro Knee Guards">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                GuardPro Knee Guards
+            </h2>
 
-        <h2>
-            GuardPro Knee Guards
-        </h2>
+            <p>
+                Protective knee gear designed for comfort,
+                flexibility and confident riding.
+            </p>
 
-        <p>
-            Protective knee gear designed for comfort,
-            flexibility and confident riding.
-        </p>
+            <div class="price">
+                ₹1,499
+            </div>
 
-        <div class="price">
-            ₹1,499
+            <a
+            href="guards.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="guards.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 8. BACKPACK -->
 
-<!-- 8. BACKPACK -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+        alt="VoltRide Backpack">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="VoltRide Backpack">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                VoltRide Backpack
+            </h2>
 
-        <h2>
-            VoltRide Backpack
-        </h2>
+            <p>
+                Spacious and durable storage for riders,
+                commuters and travellers.
+            </p>
 
-        <p>
-            Spacious and durable storage for riders,
-            commuters and travellers.
-        </p>
+            <div class="price">
+                ₹1,899
+            </div>
 
-        <div class="price">
-            ₹1,899
+            <a
+            href="backpack.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="backpack.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
 
+    <!-- 9. BOOTS -->
 
-<!-- 9. BOOTS -->
+    <div class="product-card">
 
-<div class="product-card">
+        <img
+        src="https://images.unsplash.com/photo-1582716510825-0ea3f7bd8334?auto=format&fit=crop&fm=jpg&q=85&w=1200"
+        alt="RoadForce Boots">
 
-    <img
-    src="https://wds-service-1258344699.file.myqcloud.com/20/17775/jpg/1700790071636b53ff29b8fb808ae350e95d4d36199ce.jpg?version=1700790074"
-    alt="RoadForce Boots">
+        <div class="product-info">
 
-    <div class="product-content">
+            <h2>
+                RoadForce Boots
+            </h2>
 
-        <h2>
-            RoadForce Boots
-        </h2>
+            <p>
+                Durable riding boots designed for comfort,
+                support and everyday riding.
+            </p>
 
-        <p>
-            Durable riding boots designed for comfort,
-            support and everyday riding.
-        </p>
+            <div class="price">
+                ₹2,999
+            </div>
 
-        <div class="price">
-            ₹2,999
+            <a
+            href="boots.html"
+            class="product-btn">
+                View Product
+            </a>
+
         </div>
-
-        <a
-        href="boots.html"
-        class="view-btn">
-            View Product
-        </a>
 
     </div>
 
-</div>
-
-
-</div>
 
 </section>
 
@@ -597,23 +617,15 @@ footer strong{
 <section class="content-marketing">
 
     <h2>
-        Ride More. <span>Know More.</span>
+        Ride Smarter. <span>Ride Better.</span>
     </h2>
 
     <p>
-        Discover useful riding tips, safety advice,
-        gear guides and road-trip information through
-        the RideVolt blog.
+        At RideVolt, we don't just sell riding gear.
+        Our guides, riding tips and product information
+        help riders make better choices and enjoy every
+        journey with confidence.
     </p>
-
-    <br>
-
-    <a
-    href="blog.html"
-    class="view-btn"
-    style="display:inline-block;width:auto;padding:12px 25px;">
-        Explore Our Blog
-    </a>
 
 </section>
 
@@ -623,7 +635,7 @@ footer strong{
 <footer>
 
     <p>
-        © 2026 <strong>RideVolt</strong> |
+        © 2026 <strong>RideVolt</strong>.
         Gear Up. Ride Further.
     </p>
 
